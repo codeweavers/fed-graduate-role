@@ -28,3 +28,12 @@ Use the [GET https://pokeapi.co/api/v2/pokemon/{id or name}/](https://pokeapi.co
 
 ### Non Mandatory Requirements
 If you're enjoying the task and want to show off, use any other additional PokéAPI(s) to add more functionality and/or information to your application. 
+
+
+### Getting Started
+#### Install Dependencies
+`npm install`
+#### Serve Project
+`ng serve`
+
+This is the easiest way to run and develop your app locally.
