@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fe-calculator-project": {
+    "app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -85,18 +85,6 @@
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fe-calculator-project:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "fe-calculator-project:serve:production"
-            }
           }
         }
       }
