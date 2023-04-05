@@ -40,28 +40,44 @@ This is the easiest way to run and develop your app locally.
 
 ## Martha's Notes
 
-👀 = doing
-✅ = done
-🤔 = curious/question for CWs/find out more
-🛎️ = take note, Martha!
+    👀 = doing
+    ✅ = done
+    🤔 = curious/question for CWs/find out more
+    🛎️ = take note, Martha!
 
 ### Process (5/4/23)
 
  • Read through README ✅
- 🤔 What does 'hydrate' mean?
- 🤔 What other Pokémon APIs are out there? 
+    🤔 What does 'hydrate' mean?
+    🤔 What other Pokémon APIs are out there? 
 
  • Set up folders in GitHub + VS Code ✅
 
- • Read through PokéAPI documentation 
- 🤔 What's a Wrapper Library? Creates a simple interface. 
- 🛎️ This could be handy for making sure there are 50 results on each page. Resources List/Pagination: 'If you would like to change this just add a 'limit' query parameter to the GET request, e.g. ?limit=60. You can use 'offset' to move to the next page, e.g. ?limit=60&offset=60.'
- 🛎️ Potential additional functionality with Abilities: http://bulbapedia.bulbagarden.net/wiki/Ability
+ • Read through PokéAPI documentation ✅
+    🤔 What's a Wrapper Library? Creates a simple interface. 
+    🛎️ This could be handy for making sure there are 50 results on each page. Resources List/Pagination: 'If you would like to change this just add a 'limit' query parameter to the GET request, e.g. ?limit=60. You can use 'offset' to move to the next page, e.g. ?limit=60&offset=60.'
+    🛎️ Potential additional functionality with Abilities: http://bulbapedia.bulbagarden.net/wiki/Ability
 
+ • Research Pokédex ✅
+    Basically just a Pokémon database (as I thought!). Interesting that they have 'Total' points
 
- • Research Pokédex
-
- • Research TypeScript
+ • Research TypeScript 👀
+    Have studied a little bit on SoC bootcamp
+    Compiler can catch bugs in advance
+    Superset of JS
+    Installing the dependencies (red squiggles have disappeared) ✅
+    This is the version of JS it's targeting: ES2022
+    Added '"watch": true,' to tsconfig.json (recompiles the code every time we save the file, means I don't have to use the 'tsc' command in the temrinal after every change)
+    2x ways you can strong-type your code: implicitly or explicitly. 
+    Don't add notation that is redundant e.g. let lucky: number = 23;
+    You can also add your own types (typically in Pascal case) 
+    In TS, we can enforce the shape of an object with an interface
+    Strong-typing a function can be a little more complex. 
+    'void' common as a type for Event Listeners 
+    Strong-typing an array 
+    'Twople'? Have not come across this before. It's a fixed-length array where each item has a fixed type. 
+    Can use '?' in TS to make values optional e.g. type MyList = [number?, string?, boolean?]. Can also use to make function arguments optional
+    TS generics = lets us specify type for later on in our code e.g. class Observable<T> {
 
  • Research Angular
 
