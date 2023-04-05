@@ -38,20 +38,35 @@ If you're enjoying the task and want to show off, use any other additional Poké
 
 This is the easiest way to run and develop your app locally.
 
-##Martha's Notes
+## Martha's Notes
 
 👀 = doing
 ✅ = done
 🤔 = curious/question for CWs/find out more
+🛎️ = take note, Martha!
 
-###Process (5/4/23)
+### Process (5/4/23)
 
-Read through README ✅
-Set up folders in GitHub + VS Code ✅
-Read through PokéAPI documentation 
-Research Pokédex
-Research TypeScript
-Research Angular
-Research Bootstrap
-What is my MVP?
-Make Wireframe
+ • Read through README ✅
+ 🤔 What does 'hydrate' mean?
+ 🤔 What other Pokémon APIs are out there? 
+
+ • Set up folders in GitHub + VS Code ✅
+
+ • Read through PokéAPI documentation 
+ 🤔 What's a Wrapper Library? Creates a simple interface. 
+ 🛎️ This could be handy for making sure there are 50 results on each page. Resources List/Pagination: 'If you would like to change this just add a 'limit' query parameter to the GET request, e.g. ?limit=60. You can use 'offset' to move to the next page, e.g. ?limit=60&offset=60.'
+ 🛎️ Potential additional functionality with Abilities: http://bulbapedia.bulbagarden.net/wiki/Ability
+
+
+ • Research Pokédex
+
+ • Research TypeScript
+
+ • Research Angular
+
+ • Research Bootstrap
+
+ • What is my MVP?
+
+ • Make Wireframe
