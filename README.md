@@ -47,6 +47,8 @@ This is the easiest way to run and develop your app locally.
 
 ## Process (5/4/23)
 
+### AM
+
 ### Read through README ✅
 - What does 'hydrate' mean? 🤔 
 - What other Pokémon APIs are out there? 🤔 
@@ -104,9 +106,18 @@ This is the easiest way to run and develop your app locally.
  - Rows = not much you can change about these
  - .col creates a column div
  - I can now add rows and columns!
- - How can I create columns of a set size? 
+ - How can I create columns of a set size and breakpoint? E.g class="col-lg-8 col-md-6"
+
+ ### PM 
+ - Have come back after lunch and am thinking it would be wise to focus on my MVP + wireframe and come back to the Bootleg tutorial once I need it in more granular detail: https://www.youtube.com/watch?v=-qfEOE4vtxE
 
  ### What is my MVP?
+ Step 1: Build a page to display all available Pokémon using the GET request. User should be able to navigate through the result in blocks of 50 (see earlier notes re: Pagination). The page must be reloadable and shareable (e.g. https://myapp.co.uk/pokemon-directory?page=4 should hydrate the UI correctly showing the Pokémon results 150-200)
+ 1. I need to build a page that displays all of the Pokémon. 
+
+ Step 2: Build a page displaying information about the Pokémon using the GET request. This should be accessed by clicking a Pokémon result from Step 1. This page should be reloadable and shareable (e.g. https://myapp.co.uk/pokemon/{id} should hydrate the UI correctly with the details for the Pokémon ID in the app URL)
+
+ Stretch Goals: Add more functionality/information to the app using additional PokéAPIs. Write a couple of tests! 
 
  ### Make Wireframe
 
