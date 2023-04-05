@@ -71,15 +71,15 @@ This is the easiest way to run and develop your app locally.
 - This is the version of JS it's targeting: ES2022
 - Added '"watch": true,' to tsconfig.json (recompiles the code every time we save the file, means I don't have to use the 'tsc' command in the temrinal after every change)
 - 2x ways you can strong-type your code: implicitly or explicitly. 
-- Don't add notation that is redundant e.g. let lucky: number = 23;
+- Don't add notation that is redundant e.g. `let lucky: number = 23;`
 - You can also add your own types (typically in Pascal case) 
 - In TS, we can enforce the shape of an object with an interface
 - Strong-typing a function can be a little more complex. 
 - 'void' common as a type for Event Listeners 
 - Strong-typing an array 
 - 'Twople'? Have not come across this before. It's a fixed-length array where each item has a fixed type. 
-- Can use '?' in TS to make values optional e.g. type MyList = [number?, string?, boolean?]. Can also use to make function arguments optional
-- TS generics = lets us specify type for later on in our code e.g. class Observable<T> {
+- Can use '?' in TS to make values optional e.g. `type MyList = [number?, string?, boolean?]` Can also use to make function arguments optional
+- TS generics = lets us specify type for later on in our code e.g. `class Observable<T> {`
 
  ### Research Angular ✅
  - UI framework, maintained by Google
@@ -101,35 +101,37 @@ This is the easiest way to run and develop your app locally.
  - xl xxl etc. means the screen size
  - Breakpoints - comes with 6 predefined breakpoints (but you can customise them - but not v wise)
  - 3x elements: container, row + column
- - Has margins. If you want the column to span the whole width, use class="container-fluid border"
- - Or, if you want to mix it, you can use class="container-md border" (creates a min. width it will span across)
+ - Has margins. If you want the column to span the whole width, use `class="container-fluid border"`
+ - Or, if you want to mix it, you can use `class="container-md border"` (creates a min. width it will span across)
  - Rows = not much you can change about these
- - .col creates a column div
+ - `.col` creates a column div
  - I can now add rows and columns!
- - How can I create columns of a set size and breakpoint? E.g class="col-lg-8 col-md-6"
+ - How can I create columns of a set size and breakpoint? E.g `class="col-lg-8 col-md-6"`
 
  ### PM 
  - Have come back after lunch and am thinking it would be wise to focus on my MVP + wireframe and come back to the Bootleg tutorial once I need it in more granular detail: https://www.youtube.com/watch?v=-qfEOE4vtxE
 
- ### What is my MVP? 👀
+ ### What is my MVP? ✅
  Step 1: Build a page to display all available Pokémon using the GET request. User should be able to navigate through the result in blocks of 50 (see earlier notes re: Pagination). The page must be reloadable and shareable (e.g. https://myapp.co.uk/pokemon-directory?page=4 should hydrate the UI correctly showing the Pokémon results 150-200)
  1. I need to build a page that displays all of the Pokémon. 
 
  Step 2: Build a page displaying information about the Pokémon using the GET request. This should be accessed by clicking a Pokémon result from Step 1. This page should be reloadable and shareable (e.g. https://myapp.co.uk/pokemon/{id} should hydrate the UI correctly with the details for the Pokémon ID in the app URL)
+
+ It would be fun to display this in a Pokédex-style format. How do I do this? 🤔 
 
  Stretch Goals: Add more functionality/information to the app using additional PokéAPIs. Write a couple of tests! 
 
  Process:
  - I'm going to make a low-fidelity wireframe for Steps 1 + 2 in Figma, as I feel this could retrospectively inform what my MVP is. 
 
- ### Make Wireframe 👀
+ ### Make Wireframe ✅
  - In Figma. Initially using laptop-sized screen for maximum space, but keeping mobile-size in mind.
  - Going to look up Pokémon styling. Pokédex is a very specific shape. Think more of a basic grid system would be good for Step 1, however. 
- - Found Or-Yam's Pokédex on CodePen - could be a good reference point for Step 2? https://dev.to/oryam/css-pokedex-3iln
+ - 🛎️ Found Or-Yam's Pokédex on CodePen - could be a good reference point for Step 2? https://dev.to/oryam/css-pokedex-3iln
  - Ok, have made Low-Fidelity Wireframes for Steps 1 + 2 (found in 'src/images...')
 
 
-## Process (6/4/23)
+## Process (6/4/23) 👀
 
 ### Continuation from Yesterday:
 - Could be helpful to build a component tree? Use Miro, perhaps?
@@ -139,5 +141,5 @@ This is the easiest way to run and develop your app locally.
 
 ### Start experimenting with PokéAPi
 - Try out GET request in Postman - check all is working as expected
-- Continue Bootstrap building tutorial (using appropriate chapters)
-- Spend more time researching Angular - should I be using React?
+- Spend more time researching Angular - should I be using React? If so, why?
+- Continue Bootstrap building tutorial (using appropriate chapters: not all is applicable for MVP)
