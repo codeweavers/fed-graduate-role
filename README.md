@@ -127,7 +127,17 @@ This is the easiest way to run and develop your app locally.
  - Going to look up Pokémon styling. Pokédex is a very specific shape. Think more of a basic grid system would be good for Step 1, however. 
  - Found Or-Yam's Pokédex on CodePen - could be a good reference point for Step 2? https://dev.to/oryam/css-pokedex-3iln
  - Ok, have made Low-Fidelity Wireframes for Steps 1 + 2 (found in 'src/images...')
- - Could be helpful to build a component tree? Use Miro, perhaps?
- - Maybe I could divide into tickets on a Trello board? (Will see how pushed for time/how many threads I need to keep count of)
+
+
+## Process (6/4/23)
+
+### Continuation from Yesterday:
+- Could be helpful to build a component tree? Use Miro, perhaps?
+- Maybe I could divide into tickets on a Trello board? (Will see how pushed for time/how many threads I need to keep count of)
 
 ### Revise CRUD principles
+
+### Start experimenting with PokéAPi
+- Try out GET request in Postman - check all is working as expected
+- Continue Bootstrap building tutorial (using appropriate chapters)
+- Spend more time researching Angular - should I be using React?
