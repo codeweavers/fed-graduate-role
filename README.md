@@ -37,3 +37,21 @@ If you're enjoying the task and want to show off, use any other additional Poké
 `ng serve`
 
 This is the easiest way to run and develop your app locally.
+
+##Martha's Notes
+
+👀 = doing
+✅ = done
+🤔 = curious/question for CWs/find out more
+
+###Process (5/4/23)
+
+Read through README ✅
+Set up folders in GitHub + VS Code ✅
+Read through PokéAPI documentation 
+Research Pokédex
+Research TypeScript
+Research Angular
+Research Bootstrap
+What is my MVP?
+Make Wireframe
