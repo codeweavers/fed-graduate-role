@@ -38,30 +38,30 @@ If you're enjoying the task and want to show off, use any other additional Poké
 
 This is the easiest way to run and develop your app locally.
 
-## Martha's Notes
+# Martha's Notes
 
     👀 = doing
     ✅ = done
     🤔 = curious/question for CWs/find out more
     🛎️ = take note, Martha!
 
-### Process (5/4/23)
+## Process (5/4/23)
 
- • Read through README ✅
+### Read through README ✅
 - What does 'hydrate' mean? 🤔 
 - What other Pokémon APIs are out there? 🤔 
 
- • Set up folders in GitHub + VS Code ✅
+### Set up folders in GitHub + VS Code ✅
 
- • Read through PokéAPI documentation ✅
+### Read through PokéAPI documentation ✅
 - What's a Wrapper Library? Creates a simple interface. 
 - 🛎️ This could be handy for making sure there are 50 results on each page. Resources List/Pagination: 'If you would like to change this just add a 'limit' query parameter to the GET request, e.g. ?limit=60. You can use 'offset' to move to the next page, e.g. ?limit=60&offset=60.'
 - 🛎️ Potential additional functionality with Abilities: http://bulbapedia.bulbagarden.net/wiki/Ability
 
- • Research Pokédex ✅
+### Research Pokédex ✅
 - Basically, a Pokémon database (as I thought!). Interesting that they have 'Total' points
 
- • Research TypeScript ✅
+### Research TypeScript ✅
 - Have studied a little bit on SoC bootcamp
 - Compiler can catch bugs in advance
 - Superset of JS
@@ -79,13 +79,13 @@ This is the easiest way to run and develop your app locally.
 - Can use '?' in TS to make values optional e.g. type MyList = [number?, string?, boolean?]. Can also use to make function arguments optional
 - TS generics = lets us specify type for later on in our code e.g. class Observable<T> {
 
- • Research Angular 👀
+ ### Research Angular 👀
  - UI framework, maintained by Google
  - Component-based for building scalable apps
  - Provides collection of libraries to cover Routing + Forms e.g. React
  - Research more, M? 🤔
 
- • Research Bootstrap 👀
+ ### Research Bootstrap 👀
  - CSS framework: the most popular one 
  - Bootstrap is already installed
  - Opened with Live Server and it works! (Not in default Bootstrap font, however)
@@ -101,9 +101,8 @@ This is the easiest way to run and develop your app locally.
  - 3x elements: container, row + column
  - 
 
+ ### What is my MVP?
 
- • What is my MVP?
+ ### Make Wireframe
 
- • Make Wireframe
-
-• Revise CRUD principles
+### Revise CRUD principles
