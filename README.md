@@ -87,7 +87,7 @@ This is the easiest way to run and develop your app locally.
  - Provides collection of libraries to cover Routing + Forms e.g. React
  - Research more, M? 🤔
 
- ### Research Bootstrap 👀
+ ### Research Bootstrap ✅
  - CSS framework: the most popular one 
  - Bootstrap is already installed
  - Opened with Live Server and it works! (Not in default Bootstrap font, however)
@@ -111,7 +111,7 @@ This is the easiest way to run and develop your app locally.
  ### PM 
  - Have come back after lunch and am thinking it would be wise to focus on my MVP + wireframe and come back to the Bootleg tutorial once I need it in more granular detail: https://www.youtube.com/watch?v=-qfEOE4vtxE
 
- ### What is my MVP?
+ ### What is my MVP? 👀
  Step 1: Build a page to display all available Pokémon using the GET request. User should be able to navigate through the result in blocks of 50 (see earlier notes re: Pagination). The page must be reloadable and shareable (e.g. https://myapp.co.uk/pokemon-directory?page=4 should hydrate the UI correctly showing the Pokémon results 150-200)
  1. I need to build a page that displays all of the Pokémon. 
 
@@ -119,6 +119,15 @@ This is the easiest way to run and develop your app locally.
 
  Stretch Goals: Add more functionality/information to the app using additional PokéAPIs. Write a couple of tests! 
 
- ### Make Wireframe
+ Process:
+ - I'm going to make a low-fidelity wireframe for Steps 1 + 2 in Figma, as I feel this could retrospectively inform what my MVP is. 
+
+ ### Make Wireframe 👀
+ - In Figma. Initially using laptop-sized screen for maximum space, but keeping mobile-size in mind.
+ - Going to look up Pokémon styling. Pokédex is a very specific shape. Think more of a basic grid system would be good for Step 1, however. 
+ - Found Or-Yam's Pokédex on CodePen - could be a good reference point for Step 2? https://dev.to/oryam/css-pokedex-3iln
+ - Ok, have made Low-Fidelity Wireframes for Steps 1 + 2 (found in 'src/images...')
+ - Could be helpful to build a component tree? Use Miro, perhaps?
+ - Maybe I could divide into tickets on a Trello board? (Will see how pushed for time/how many threads I need to keep count of)
 
 ### Revise CRUD principles
