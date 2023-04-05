@@ -79,7 +79,7 @@ This is the easiest way to run and develop your app locally.
 - Can use '?' in TS to make values optional e.g. type MyList = [number?, string?, boolean?]. Can also use to make function arguments optional
 - TS generics = lets us specify type for later on in our code e.g. class Observable<T> {
 
- ### Research Angular 👀
+ ### Research Angular ✅
  - UI framework, maintained by Google
  - Component-based for building scalable apps
  - Provides collection of libraries to cover Routing + Forms e.g. React
@@ -91,7 +91,7 @@ This is the easiest way to run and develop your app locally.
  - Opened with Live Server and it works! (Not in default Bootstrap font, however)
  - Deviated from YouTube intro to look up Bootstrap docs. Have simplified stylesheet bit and it's now in the Bootstrap font with no errors
  - I needed to import the scripts into the HTML, I think, which I've now done. Great! No errors.
- - Have used Inspect --> Network for the 1st time and can see that popper.js is being loaded, too
+ - Have used Inspect --> Network for the 1st time and can see that popper.js is being loaded, too (do I need this? Didn't see it in the dependencies but have added, just in case 🤔)
  - Grid system (watching demo)
  - Content adjusts to screen size (don't need different versions for different devices)
  - Can see what it looks like in the Web developer section
@@ -99,7 +99,12 @@ This is the easiest way to run and develop your app locally.
  - xl xxl etc. means the screen size
  - Breakpoints - comes with 6 predefined breakpoints (but you can customise them - but not v wise)
  - 3x elements: container, row + column
- - 
+ - Has margins. If you want the column to span the whole width, use class="container-fluid border"
+ - Or, if you want to mix it, you can use class="container-md border" (creates a min. width it will span across)
+ - Rows = not much you can change about these
+ - .col creates a column div
+ - I can now add rows and columns!
+ - How can I create columns of a set size? 
 
  ### What is my MVP?
 
