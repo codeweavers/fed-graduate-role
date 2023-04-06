@@ -131,7 +131,7 @@ This is the easiest way to run and develop your app locally.
  - Ok, have made Low-Fidelity Wireframes for Steps 1 + 2 (found in 'src/images...')
 
 
-## Process (6/4/23) 👀
+## Process (6/4/23) 
 
 ### Continuation from Yesterday:
 - Could be helpful to build a component tree? Use Miro, perhaps?
@@ -140,6 +140,6 @@ This is the easiest way to run and develop your app locally.
 ### Revise CRUD principles
 
 ### Start experimenting with PokéAPi
+- Spend more time researching Angular - should I be using React? If so, why? 👀
 - Try out GET request in Postman - check all is working as expected
-- Spend more time researching Angular - should I be using React? If so, why?
 - Continue Bootstrap building tutorial (using appropriate chapters: not all is applicable for MVP)
