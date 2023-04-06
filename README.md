@@ -140,6 +140,15 @@ This is the easiest way to run and develop your app locally.
 ### Revise CRUD principles
 
 ### Start experimenting with PokéAPi
-- Spend more time researching Angular - should I be using React? If so, why? 👀
-- Try out GET request in Postman - check all is working as expected
+- Spend more time researching Angular - should I be using React? If so, why? `npm start`...
+- Try out GET request in Postman - check all is working as expected ✅ (Not quite as expected: can display default 20 or change to 50 Pokémon (https://pokeapi.co/api/v2/pokemon/, https://pokeapi.co/api/v2/pokemon?offset=50&limit=50) but this endpoint doesn't seem to be working: https://pokeapi.co/api/v2/pokemon/{id or name})
 - Continue Bootstrap building tutorial (using appropriate chapters: not all is applicable for MVP)
+
+### Deeper-dive into Angular setup
+- Right, going back to Angular docs, I have npm version 8.19.2 ah. I need at least version 8.5.0 to create an Angular app. So, I need to update Node. ✅
+- Going to follow the docs. npm version is now 9.5.0
+- I'm a bit confused as to how much has already been made, so I'm going to follow the docs to make a new Angular app and see if/where crossover
+- Have created a new app in 'src' called 'Pokedex' (couldn't put the accent on the 'e'!) ERROR message: 'this command is not available when running the Angular CLI inside a workspace'. I might try to install it a bit further up, see if that helps.
+- Tried to install in 'fed-graduate-role' but same ERROR - maybe it's already installed?
+- Ok, skipped that bit and cd-ed into 'app', ran `npm start` and it compiled successfully - hooray!
+
