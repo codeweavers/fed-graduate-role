@@ -151,4 +151,15 @@ This is the easiest way to run and develop your app locally.
 - Have created a new app in 'src' called 'Pokedex' (couldn't put the accent on the 'e'!) ERROR message: 'this command is not available when running the Angular CLI inside a workspace'. I might try to install it a bit further up, see if that helps.
 - Tried to install in 'fed-graduate-role' but same ERROR - maybe it's already installed?
 - Ok, skipped that bit and cd-ed into 'app', ran `npm start` and it compiled successfully - hooray!
+- ERROR 'app-header is not a known element'. Do I need to cd up? No. Have c'd out and will npm start again. Still an issue with that component. Will remove it and try steps again
+- I just removed it from app.component.html and it is now compiling successfully - but is this what I need? Don't think so. 
+- Looking at Angular docs, `<router-outlet></router-outlet>` is a defauly placeholder. Does this mean I need to replace it/keep it? No, it doesn't like `<app-header></app-header>`
+- I'm not getting anywhere, so I'll look up how to make components in Angular.
+- I'm following tutorials, typing in 'ng g c header' to the terminal but it's not working - will visit StackOverflow
+- No joy, so am going back to Angular docs and am having a go at following a YouTube tutorial so I can at least make an Angular app... it worked creating the 'Pokedex' app this time because I positioned it in the 'Codeweavers' file, rather than lower down. 
+- As with the first example, ERROR message = `ng serve --open` 'ng: command not found' so looks like something to do with ng on my computer... will investigate.
+- Ok, I think I now have Angular set up (found this helpful: https://stackoverflow.com/questions/58138138/angular-cli-ng-command-not-found-on-mac-os) BUT have this ERROR message: 'Warning: The current version of Node (19.8.1) is not supported by Angular'. Stack Overflow: https://stackoverflow.com/questions/69090357/ng-version-showing-the-current-version-of-node-16-8-0-is-not-supported-by-an. Also looked at: https://unpkg.com/browse/@angular/core@15.2.5/package.json
+- Ok, in 'Pokedex', have run `ng serve` and all seems to working ok: 'Angular Live Development Server is listaning on localhost:4200...'
+- Yay! For the first time, the Angular content is showing up - I've hopefully gotten over this hump 🐪!
+
 
