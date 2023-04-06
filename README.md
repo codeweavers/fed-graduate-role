@@ -133,6 +133,8 @@ This is the easiest way to run and develop your app locally.
 
 ## Process (6/4/23) 
 
+### AM
+
 ### Continuation from Yesterday:
 - Could be helpful to build a component tree? Use Miro, perhaps?
 - Maybe I could divide into tickets on a Trello board? (Will see how pushed for time/how many threads I need to keep count of)
@@ -140,7 +142,7 @@ This is the easiest way to run and develop your app locally.
 ### Revise CRUD principles
 
 ### Start experimenting with PokéAPi
-- Spend more time researching Angular - should I be using React? If so, why? `npm start`...
+- Spend more time researching Angular - should I be using React? If so, why? `npm start`... (see 'Deeper-dive' below) ✅
 - Try out GET request in Postman - check all is working as expected ✅ (Not quite as expected: can display default 20 or change to 50 Pokémon (https://pokeapi.co/api/v2/pokemon/, https://pokeapi.co/api/v2/pokemon?offset=50&limit=50) but this endpoint doesn't seem to be working: https://pokeapi.co/api/v2/pokemon/{id or name})
 - Continue Bootstrap building tutorial (using appropriate chapters: not all is applicable for MVP)
 
@@ -155,11 +157,21 @@ This is the easiest way to run and develop your app locally.
 - I just removed it from app.component.html and it is now compiling successfully - but is this what I need? Don't think so. 
 - Looking at Angular docs, `<router-outlet></router-outlet>` is a defauly placeholder. Does this mean I need to replace it/keep it? No, it doesn't like `<app-header></app-header>`
 - I'm not getting anywhere, so I'll look up how to make components in Angular.
-- I'm following tutorials, typing in 'ng g c header' to the terminal but it's not working - will visit StackOverflow
+- I'm following tutorials, typing in 'ng g c header' to the terminal but it's not working - will visit Stack Overflow
 - No joy, so am going back to Angular docs and am having a go at following a YouTube tutorial so I can at least make an Angular app... it worked creating the 'Pokedex' app this time because I positioned it in the 'Codeweavers' file, rather than lower down. 
 - As with the first example, ERROR message = `ng serve --open` 'ng: command not found' so looks like something to do with ng on my computer... will investigate.
 - Ok, I think I now have Angular set up (found this helpful: https://stackoverflow.com/questions/58138138/angular-cli-ng-command-not-found-on-mac-os) BUT have this ERROR message: 'Warning: The current version of Node (19.8.1) is not supported by Angular'. Stack Overflow: https://stackoverflow.com/questions/69090357/ng-version-showing-the-current-version-of-node-16-8-0-is-not-supported-by-an. Also looked at: https://unpkg.com/browse/@angular/core@15.2.5/package.json
-- Ok, in 'Pokedex', have run `ng serve` and all seems to working ok: 'Angular Live Development Server is listaning on localhost:4200...'
+- Ok, in 'Pokedex', have run `ng serve` and all seems to working ok: 'Angular Live Development Server is listening on localhost:4200...'
 - Yay! For the first time, the Angular content is showing up - I've hopefully gotten over this hump 🐪!
-
-
+- It says I don't have permission: ERROR "! If you believe this might be a permissions issue, please double-check the permissions of the file and its containing directories, or try running the command again as root/Administrator.
+- reading Stack Overflow docs, have tried `sudo npm install -g @angular/cli` and it looks like it worked. 
+- `ng help` now works, at least! Progress!
+- ok, I still want to make a Header - let's see how this goes... `ng g c header --skipTests`
+- same ERROR as before: 'This command is not available when running the Angular CLI outside a workspace' - do I need to do this in 'app' then?
+- 🎉🎉🎉 FINALLY DID IT!!! `ng g c header` 🎉🎉🎉 (maybe I just didn't have permission? Also, it didn't like the 'skipTests' bit)
+- Ok, can I do this in the 'fed-graduate-role' file, too? Will try - YES!!
+- Back to 'Pokedex' file to continue test set-up. The browser is getting confused with the two apps - maybe I'll move/delete the test app (as 'fed...' seems to be working ok now 
+- YAY it's now working on port 4200 
+- I think because I've already imported Bootstrap, It's not showing up the Header. In future projects, I'll get Angular set up first!
+- I've commented out Bootstrap, but the page is still not showing. WARNING in Console reads: 'non-JS module files deprecated.' 
+- Have commented Bootstrap back in again...👀
