@@ -4,7 +4,7 @@
     <img [src]="pokemon.sprites.front_default" alt="pokemon"class="card-img-top"/>
     <div class="card-body">
         <p>{{pokemon.name}}</p>
-        <p>{{pokemon.weight}}</p>
+     
     </div>
-    <app-button></app-button>
+ <a routerLink="pokemon/{{pokemon.name}}" [state]="{data: pokemon}">See more</a>
   </div>

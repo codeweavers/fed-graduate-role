@@ -13,16 +13,17 @@ import { ButtonComponent } from './components/button/button.component';
 import { AboutComponent } from './components/about/about.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 
 const appRoutes = [
-  {path:"", 
-  component: ResultsDisplayComponent}, 
-  {path:"about", 
-  component: AboutComponent}, 
-  {path:"**", 
-  component: PageNotFoundComponent}, 
-  ]
-  
+  { path: '', component: ResultsDisplayComponent },
+  { path: 'about', component: AboutComponent },
+  // { path: '**', component: PageNotFoundComponent },
+  {
+    path: 'pokemon/:name',
+    component: ResultDetailComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ const appRoutes = [
     ResultComponent,
     ButtonComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ResultDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,6 @@ const appRoutes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
