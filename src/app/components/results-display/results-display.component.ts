@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'PokemonType';
+import { PokemonList } from 'PokemonListType';
 import { PokemonService } from 'src/app/services/pokemon.service';
 @Component({
   selector: 'app-results-display',
@@ -7,7 +7,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./results-display.component.scss'],
 })
 export class ResultsDisplayComponent implements OnInit {
-  pokemon: Pokemon = {
+  pokemon: PokemonList = {
     count: 0,
     next: '',
     previous: '',
@@ -25,12 +25,10 @@ export class ResultsDisplayComponent implements OnInit {
         this.pokemonService
           .getSpecificPokemon(result.name)
           .subscribe((uniqueResponse: any) => {
-         
             this.pokemonSet.push(uniqueResponse);
           });
-          
       });
     });
-    console.log("FULLSET", this.pokemonSet)
+    console.log('🚨🚨🚨FULLSET', this.pokemonSet);
   }
 }
