@@ -2,7 +2,7 @@
     <p>THIS IS RESULTS DISPLAY DIV</p>
     <p>HERE will be rendered the specific pokemon display cards</p>
     {{pokemon}}
-    <app-result></app-result>
+    <app-result *ngFor="let pokemon of pokemonList" [pokemon]="pokemon"></app-result>
     <app-result></app-result>
     <app-result></app-result>
 </div>

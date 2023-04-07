@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit, Input,Output, } from '@angular/core';
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent {
 
+export class ResultComponent implements OnInit{
+@input pokemon: PokemonType
 }
