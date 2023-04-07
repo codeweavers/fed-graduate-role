@@ -1,0 +1,20 @@
+.result-div{
+  display: flex;
+  flex-direction: flex-col;
+  align-items: center;
+  justify-content: center;  
+  border-radius: 50px;
+  background: #fcfcfc;
+  box-shadow:  9px 9px 13px #e8e8e8,
+               -9px -9px 13px #ffffff;
+               cursor: pointer;
+}
+
+.result-div:hover {
+    background-color: #fff4da;
+    transform: translate(2px, 2px);
+  }
+
+img{
+   max-width:100%;
+}
