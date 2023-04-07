@@ -1,12 +1,22 @@
-<div class="col-md-6">
-<div class="card mb-3">
-  <app-result
-    *ngFor="
-      let pokemon of pokemonSet
-        | paginate
-          : { itemsPerPage: 50, currentPage: page, totalItems: totalPokemon }
-    "
-    [pokemon]="pokemon"
-  ></app-result>
+<div class="container resultsDisplay">
+  <div class="row itemsBlock">
+    <div
+      class="col-sm-3 col-lg-3 col-12 col-xl-2 g-4"
+      *ngFor="
+        let pokemon of pokemonSet
+          | paginate
+            : {
+                itemsPerPage: 50,
+                currentPage: page,
+                totalItems: totalPokemon
+              }
+      "
+    >
+      <app-result [pokemon]="pokemon"></app-result>
+    </div>
+  </div>
+
+  <pagination-controls
+    (pageChange)="page = $event; pokemonSet = []; getPokemon()"
+  ></pagination-controls>
 </div>
-<pagination-controls (pageChange)="page = $event; pokemonSet = []; getPokemon()"></pagination-controls>
