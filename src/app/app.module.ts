@@ -18,7 +18,6 @@ import { ResultDetailComponent } from './components/result-detail/result-detail.
 const appRoutes = [
   { path: '', component: ResultsDisplayComponent },
   { path: 'about', component: AboutComponent },
-  // { path: '**', component: PageNotFoundComponent },
   {
     path: 'pokemon/:name',
     component: ResultDetailComponent,

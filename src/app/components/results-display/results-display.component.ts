@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonList } from 'PokemonListType';
-import {PokemonType} from 'Pokemon'
+import { PokemonType } from 'Pokemon';
 
 import { PokemonService } from 'src/app/services/pokemon.service';
 @Component({
@@ -9,24 +9,24 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./results-display.component.scss'],
 })
 export class ResultsDisplayComponent implements OnInit {
-
   //Think this is redundant? Check!
-  pokemon: PokemonType[] = []
+  pokemon: PokemonType[] = [];
   page = 1;
   totalPokemon: number;
   pokemonSet: any = [];
 
   constructor(private pokemonService: PokemonService) {}
 
-  // Create the service before importing it here and using to get hte pokemon info
+  // Get all pokemon when component is created so full set can be listed in pagination.
   ngOnInit(): void {
     this.getPokemon();
   }
 
-  getPokemon(){
-    this.pokemonService.getPokemon(this.page*50).subscribe((pokemon: any) => {
+  getPokemon() {
+    this.pokemonService.getPokemon(this.page * 50).subscribe((pokemon: any) => {
       this.totalPokemon = pokemon.count;
 
+      // Store all pokemon results in pokemonSet
       pokemon.results.forEach((result: any) => {
         this.pokemonService
           .getSpecificPokemon(result.name)
