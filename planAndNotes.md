@@ -18,6 +18,7 @@
 - DONE - Set up router
 - UiService
 - Conditional formatting 
+- Pagination for display https://www.youtube.com/watch?v=ov9UqIEa8Zs 
 - Modals that have URLs -> https://netbasal.com/give-your-modals-url-address-with-auxiliary-routes-in-angular-eb76497c0bca:
 - Auxhiliary routing!! https://angular.io/guide/router
 - Set up basic components skeleton

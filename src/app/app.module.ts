@@ -11,6 +11,7 @@ import { ResultsDisplayComponent } from './components/results-display/results-di
 import { ResultComponent } from './components/result/result.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AboutComponent } from './components/about/about.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const appRoutes = [
@@ -34,6 +35,7 @@ component: AboutComponent},
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],

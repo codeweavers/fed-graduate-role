@@ -12,8 +12,9 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemon(): Observable<PokemonList> {
-    return this.http.get<PokemonList>(this.apiUrl);
+  getPokemon(offset: number): Observable<PokemonList> {
+    
+    return this.http.get<PokemonList>(`${this.apiUrl}&offset=${offset}`);
   }
 
   getSpecificPokemon(name: string) {
