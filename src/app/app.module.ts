@@ -12,14 +12,17 @@ import { ResultComponent } from './components/result/result.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AboutComponent } from './components/about/about.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes = [
-{path:"", 
-component: ResultsDisplayComponent}, 
-{path:"about", 
-component: AboutComponent}, 
-]
+  {path:"", 
+  component: ResultsDisplayComponent}, 
+  {path:"about", 
+  component: AboutComponent}, 
+  {path:"**", 
+  component: PageNotFoundComponent}, 
+  ]
+  
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ component: AboutComponent},
     ResultsDisplayComponent,
     ResultComponent,
     ButtonComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

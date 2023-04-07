@@ -27,6 +27,7 @@
     - responsvie image sizing
 - Use Neumorphism and CSS  resources
 - Look into the tests that Angular spins up automatically
+- wildcard routing
 - Deploy!
 
 

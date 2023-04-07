@@ -1,5 +1,9 @@
-<div class="result">
-<p>{{pokemon.name}}</p>
-<p>{{pokemon.weight}}</p>
-<img [src]="pokemon.sprites.front_default" alt="pokemon"/>
-</div>
+
+
+  <div class="card" style="width: 12rem; background-color: blanchedalmond;">
+    <img [src]="pokemon.sprites.front_default" alt="pokemon"class="card-img-top"/>
+    <div class="card-body">
+        <p>{{pokemon.name}}</p>
+        <p>{{pokemon.weight}}</p>
+    </div>
+  </div>
