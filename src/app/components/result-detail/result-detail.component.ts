@@ -20,6 +20,7 @@ export class ResultDetailComponent implements OnInit {
     this.pokemonName = this._Activatedroute.snapshot.paramMap.get('name');
     console.log('🚨name comes through as:', this.pokemonName);
    
+    //PUT IN ERROR HANDLING!
    try{ this.pokemonService
       .getSpecificPokemon(this.pokemonName)
       .subscribe((pokemon) => (this.pokemonData = pokemon));} catch(e){
@@ -30,7 +31,7 @@ export class ResultDetailComponent implements OnInit {
       '🚨 this DATA after API call value returned from service:',
       this
     );
-    console.log('🚨API call returned value');
+    console.log('🚨ITEM', this.pokemonData.held_items);
 
     // This approach ( plus puling in ActivatedRoute to the constructor) was carrying data through, but the URLs were not shareable as the data relied on navigation history.
     // this.pokemonName = this.route.snapshot.paramMap.get('name');

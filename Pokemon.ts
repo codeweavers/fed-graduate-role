@@ -4,7 +4,7 @@ export interface PokemonType {
   forms: [];
   game_indices: [];
   height: number;
-  held_items: [];
+  held_items: [item:{name: string, url: string}, version_details:[] ];
   id: number;
   is_default: boolean;
   location_area_encounters: string;
