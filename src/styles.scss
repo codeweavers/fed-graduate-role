@@ -1,1 +1,8 @@
 @import "bootstrap/scss/bootstrap";
+div {
+padding: 2px;
+border: 1px solid red;
+margin: 10px;
+  background: #fcfcfc;
+  box-shadow: 20px 20px 27px #d1d1d1, -20px -20px 27px #ffffff;
+}

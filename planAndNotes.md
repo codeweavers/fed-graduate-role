@@ -15,10 +15,11 @@
 - Wireframe
 - Component tree
 - Data flow diagram 
-- Set up router
+- DONE - Set up router
 - UiService
 - Conditional formatting 
-
+- Modals that have URLs -> https://netbasal.com/give-your-modals-url-address-with-auxiliary-routes-in-angular-eb76497c0bca:
+- Auxhiliary routing!! https://angular.io/guide/router
 - Set up basic components skeleton
 - Plan colour scheme and accessibility considerations
 - Bootstrap components - look into them!
