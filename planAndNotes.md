@@ -71,3 +71,6 @@ TO-DO//BUGS:
 - Find way to capitalise first letters of pokemon name 
 - Clean up dat amore generall: e.g., weight, height
 - Get held items displaying as images
+
+Additional features:
+- Filter by type
