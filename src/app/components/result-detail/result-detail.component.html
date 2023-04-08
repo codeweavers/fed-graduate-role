@@ -8,7 +8,7 @@
     <p>
       This pokemon is {{ pokemonName| titlecase}}
     </p>
-
+<p>Weight: {{pokemonData.weight | convertWeight }}</p>
     <p>Height: {{ pokemonData.height | convertHeight }}</p>
     <div class="abilities" *ngFor="let stat of pokemonData.stats">
       <p>{{ stat["stat"]["name"] }}:</p>

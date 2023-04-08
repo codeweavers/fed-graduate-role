@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { convertHeightPipe } from './pipes/convertHeight';
+import { convertWeightPipe } from './pipes/convertWeight';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { convertHeightPipe } from './pipes/convertHeight';
     ResultDetailComponent,
     PaginationComponent,
     convertHeightPipe,
+    convertWeightPipe,
   ],
   imports: [
     BrowserModule,
