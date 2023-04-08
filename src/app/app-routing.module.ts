@@ -5,17 +5,14 @@ import { AboutComponent } from './components/about/about.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 
 const routes: Routes = [
-  { path: 'pokemon', component: ResultsDisplayComponent },
+  { path: '', component: ResultsDisplayComponent },
   { path: 'about', component: AboutComponent },
   {
     path: 'pokemon/:name',
     component: ResultDetailComponent,
   },
-  {
-    path: 'pokemon/page/:page',
-    component: ResultsDisplayComponent,
-  },
 ];
+
 
 // HERE above add router link that does same thing, so main page can load except with diff parameter used as offset
 

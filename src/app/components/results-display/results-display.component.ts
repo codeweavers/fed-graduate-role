@@ -3,7 +3,7 @@ import { PokemonList } from 'PokemonListType';
 import { PokemonType } from 'Pokemon';
 
 import { PokemonService } from 'src/app/services/pokemon.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route } from '@angular/router';
 @Component({
   selector: 'app-results-display',
   templateUrl: './results-display.component.html',
@@ -18,11 +18,13 @@ export class ResultsDisplayComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonService,
-    private _Activatedroute: ActivatedRoute
+    private _Activatedroute: ActivatedRoute,
+
   ) {}
 
   // Get all pokemon when component is created so full set can be listed in pagination.
   ngOnInit(): void {
+
    let pageString: string | null = this._Activatedroute.snapshot.paramMap.get('page')
    this.page =  Number(pageString)
    this.getPokemon();
