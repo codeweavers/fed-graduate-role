@@ -72,6 +72,7 @@ TO-DO//BUGS:
 - Clean up data more generall: e.g., weight, height: Pipe
 - Get held items displaying as images
 - Account for when pokemon do NOT have sufficient images
+- remove huphens from pokemon names
 
 Additional features:
 - Filter by type

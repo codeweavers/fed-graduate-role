@@ -6,10 +6,10 @@
   </div>
   <div class="data">
     <p>
-      This pokemon is {{ pokemonName[0].toUpperCase() + pokemonName.slice(1) }}
+      This pokemon is {{ pokemonName| titlecase}}
     </p>
 
-    <p>Height: {{ pokemonData.height }}</p>
+    <p>Height: {{ pokemonData.height | convertHeight }}</p>
     <div class="abilities" *ngFor="let stat of pokemonData.stats">
       <p>{{ stat["stat"]["name"] }}:</p>
       <p>{{ stat["base_stat"] }}</p>
