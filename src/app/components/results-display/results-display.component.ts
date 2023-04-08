@@ -11,7 +11,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class ResultsDisplayComponent implements OnInit {
   //Think this is redundant? Check!
   pokemon: PokemonType[] = [];
-  page = 1;
+  page = 0;
   totalPokemon: number;
   pokemonSet: any = [];
 

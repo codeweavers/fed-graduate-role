@@ -8,21 +8,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ResultsDisplayComponent } from './components/results-display/results-display.component';
-import { ResultComponent } from './components/result/result.component';
+import { ResultComponent } from './components/result-card/result.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AboutComponent } from './components/about/about.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
-const appRoutes = [
-  { path: '', component: ResultsDisplayComponent },
-  { path: 'about', component: AboutComponent },
-  {
-    path: 'pokemon/:name',
-    component: ResultDetailComponent,
-  },
-];
 
 @NgModule({
   declarations: [
@@ -35,13 +28,13 @@ const appRoutes = [
     AboutComponent,
     PageNotFoundComponent,
     ResultDetailComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],
   bootstrap: [AppComponent],
