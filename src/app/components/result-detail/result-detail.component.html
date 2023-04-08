@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="card">
+  <div class="images">
+    <img [src]="pokemonData.sprites.front_default" alt="pokemon" />
+    <img [src]="pokemonData.sprites.back_default" alt="pokemon" />
+  </div>
+  <div class="data">
+    <p>
+      This pokemon is {{ pokemonName[0].toUpperCase() + pokemonName.slice(1) }}
+    </p>
+
+    <p>Height: {{ pokemonData.height }}</p>
+    <div class="abilities" *ngFor="let stat of pokemonData.stats">
+      <p>{{ stat["stat"]["name"] }}:</p>
+      <p>{{ stat["base_stat"] }}</p>
+    </div>
+
+    <div class="abilities">
+      <p>Abilities:</p>
+      <p *ngFor="let ability of pokemonData.abilities">
+        {{ ability["ability"]["name"] }}
+      </p>
+    </div>
+  </div>
+</div>
+</div>

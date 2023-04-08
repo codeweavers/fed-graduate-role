@@ -1,4 +1,4 @@
-<div class="container resultsDisplay">
+<div class="container">
   <div class="row itemsBlock">
     <div
       class="col-sm-3 col-lg-3 col-12 col-xl-2 g-4"
@@ -15,6 +15,8 @@
       <app-result [pokemon]="pokemon"></app-result>
     </div>
   </div>
+
+<app-pagination></app-pagination>
 
   <pagination-controls
     (pageChange)="page = $event; pokemonSet = []; getPokemon()"
