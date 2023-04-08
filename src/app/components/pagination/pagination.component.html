@@ -1,8 +1,10 @@
-<div class="pagination
-.">
-    <p *ngFor="let page of pagesArray">
-        <a [routerLink]="''" [queryParams]="{page: page}" >{{page}} </a> 
+<div class="pagination .">
+  <a
+    *ngFor="let page of pagesArray"
+   
+    routerLink="../pokemon"
+    [queryParams]="{page: page}"
 
-        
-    </p>
+    >{{ page }}
+  </a>
 </div>

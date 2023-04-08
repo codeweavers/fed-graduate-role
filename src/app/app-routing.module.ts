@@ -5,7 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 
 const routes: Routes = [
-  { path: '', component: ResultsDisplayComponent },
+  { path: 'pokemon', component: ResultsDisplayComponent },
   { path: 'about', component: AboutComponent },
   {
     path: 'pokemon/:name',
