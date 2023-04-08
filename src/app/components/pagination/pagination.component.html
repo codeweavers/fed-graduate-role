@@ -1,10 +1,9 @@
-<div class="pagination .">
+<li class="page-item">
   <a
     *ngFor="let page of pagesArray"
-   
     routerLink="../pokemon"
-    [queryParams]="{page: page}"
-
+    [queryParams]="{ page: page }"
+    class="page-link"
     >{{ page }}
   </a>
-</div>
+</li>
