@@ -1,1 +1,9 @@
-<p>pagination works!</p>
+<li class="page-item">
+  <a
+    *ngFor="let page of pagesArray"
+    routerLink="../pokemon"
+    [queryParams]="{ page: page }"
+    class="page-link"
+    >{{ page }}
+  </a>
+</li>
