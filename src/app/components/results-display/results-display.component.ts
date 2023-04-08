@@ -3,6 +3,7 @@ import { PokemonList } from 'PokemonListType';
 import { PokemonType } from 'Pokemon';
 
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-results-display',
   templateUrl: './results-display.component.html',
@@ -11,16 +12,20 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class ResultsDisplayComponent implements OnInit {
   //Think this is redundant? Check!
   pokemon: PokemonType[] = [];
-  page = 0;
+  page: number ;
   totalPokemon: number;
   pokemonSet: any = [];
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(
+    private pokemonService: PokemonService,
+    private _Activatedroute: ActivatedRoute
+  ) {}
 
   // Get all pokemon when component is created so full set can be listed in pagination.
   ngOnInit(): void {
     this.getPokemon();
-    // this.getPageNumbers(this.pokemonSet);
+    // this.pageNumber = +
+  console.log("PAGE NUMBER COMING THROUGH IS:", this._Activatedroute.snapshot.paramMap.get('page'))
   }
 
   // Get 50 pokemon through, and for each one make an individual API call to get unique details. This allows the images to be displayed on the main page.
@@ -39,5 +44,4 @@ export class ResultsDisplayComponent implements OnInit {
     });
     // console.log('🚨🚨🚨FULLSET', this.pokemonSet);
   }
-
 }

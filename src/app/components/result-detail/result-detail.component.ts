@@ -18,7 +18,6 @@ export class ResultDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonName = this._Activatedroute.snapshot.paramMap.get('name');
-    console.log('🚨name comes through as:', this.pokemonName);
    
     //PUT IN ERROR HANDLING!
    try{ this.pokemonService
