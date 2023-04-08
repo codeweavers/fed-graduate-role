@@ -59,7 +59,7 @@ TO-DO//BUGS:
 
 - Cannot pass data through the history state object as the page then does not hydrate if the URL is shared. So currently the version I have will run an API call using the name in the parameter
 
-- Same issue for paginatino as I've currently resolved it for the prototype - it's not shareable. So, try a similar approach where a specific API cann is made froe  pre-batched set of pagination buttons that are each hard-coded to make a specific API call with amount and offset specified in params. 
+- Same issue for paginatino as I've currently resolved it for the prototype - it's not shareable. So, try a similar approach where a specific API cann is made from  pre-batched set of pagination buttons that are each coded to make a specific API call with amount and offset specified in params (using the number of that page) 
     - add new function to pokemon service that calls for specific amount with specific offset
     - create a pagination component
     - this component uses ngFor to loop over numbers 1-(fullSet.length/50) and for each one creates a button of number i, that when you press it links through to a dynamically rendered results page where the getBPokemonBatch function is called and that batch is rendered in the display.

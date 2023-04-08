@@ -8,10 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class PaginationComponent implements OnInit{
   constructor(){}
-  
+
 @Input() totalAmount: number 
 
-  // takes the 
+  // takes the page number 
 ngOnInit():void{}
 
 }

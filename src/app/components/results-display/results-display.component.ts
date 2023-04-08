@@ -37,4 +37,10 @@ export class ResultsDisplayComponent implements OnInit {
     });
     console.log('🚨🚨🚨FULLSET', this.pokemonSet);
   }
+
+  getPageNumbers(pokemonSet:PokemonType[]):number[]{
+let pageNumbers = Array.from({length: pokemonSet.length+1}, (_, index)=> index)
+console.log("PAGE NUMBERS", pageNumbers)
+    return pageNumbers;
+  }
 }
