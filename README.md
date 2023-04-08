@@ -146,7 +146,7 @@ This is the easiest way to run and develop your app locally.
 - Try out GET request in Postman - check all is working as expected ✅ (Not quite as expected: can display default 20 or change to 50 Pokémon (https://pokeapi.co/api/v2/pokemon/, https://pokeapi.co/api/v2/pokemon?offset=50&limit=50) but this endpoint doesn't seem to be working: https://pokeapi.co/api/v2/pokemon/{id or name})
 - Continue Bootstrap building tutorial (using appropriate chapters: not all is applicable for MVP)
 
-### Deeper-dive into Angular setup
+### Deeper-dive into Angular setup and creating Headers ✅
 - Right, going back to Angular docs, I have npm version 8.19.2 ah. I need at least version 8.5.0 to create an Angular app. So, I need to update Node. ✅
 - Going to follow the docs. npm version is now 9.5.0
 - I'm a bit confused as to how much has already been made, so I'm going to follow the docs to make a new Angular app and see if/where crossover
@@ -180,7 +180,11 @@ This is the easiest way to run and develop your app locally.
 
 ### AM
 
+### Continuation from 6/4/23: 
 - Working on figuring out bugs that pop up in the console, e.g. ERROR 'The selector "app-root" did not match any elements'. Have done some research on Stack Overflow and Reddit and have found out it might be because there is an issue with the html structure (particularly as I'd already added Bootstrap into the mix... oops!). I have managed to make this ERROR message go away by calling the HTML "app-header" but have a new one: ERROR 'The selector "app-header" did not match any elements'. Ah, opk - that's the same ERROR, just a different flavour!
-- Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Say issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));` - will give it a go
-- Interesting: if I get rid of lines 6 and 7 from 'main.ts', the ERROR messages disappear - is this good?! 🤔 👀
+- Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Say issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));`. Will give it a go
+- Interesting: if I get rid of lines 6 and 7 from 'main.ts', the ERROR messages disappear - is this good?! 🤔 I will stick a pin in here, as I'm not sure if getting rid of that was a good idea or not!
+
+### Getting Data in Angular 👀
+
 
