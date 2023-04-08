@@ -1,7 +1,7 @@
 <div class="pagination
 .">
     <p *ngFor="let page of pagesArray">
-        <a [routerLink]="''" queryParams="{page: page}" >{{page}} </a> 
+        <a [routerLink]="''" [queryParams]="{page: page}" >{{page}} </a> 
 
         
     </p>
