@@ -12,7 +12,7 @@ export class ResultComponent implements OnInit {
 
   constructor(){};
   ngOnInit():void{
-    console.log("POKEMON ON RESULT:", this.pokemon)
+    // console.log("POKEMON ON RESULT:", this.pokemon)
   };
 
 }

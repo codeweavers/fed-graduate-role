@@ -16,7 +16,7 @@
     </div>
   </div>
 
-<app-pagination></app-pagination>
+<app-pagination [totalPokemon]="totalPokemon"></app-pagination>
 
   <pagination-controls
     (pageChange)="page = $event; pokemonSet = []; getPokemon()"
