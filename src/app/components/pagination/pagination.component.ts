@@ -20,8 +20,8 @@ export class PaginationComponent implements OnInit {
     this.pokemonService.getPokemon(0).subscribe((response) => {
       const totalPages = response.count / 50;
       const pagesArray = Array.from(
-        { length: totalPages },
-        (value, index) => index
+        { length: totalPages  +1 },
+        (value, index) => index +1
       );
       this.pagesArray = pagesArray;
     });

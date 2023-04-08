@@ -23,12 +23,12 @@ export class ResultsDisplayComponent implements OnInit {
 
   // Get all pokemon when component is created so full set can be listed in pagination.
   ngOnInit(): void {
-    this.getPokemon();
-    // this.pageNumber = +
-  console.log("PAGE NUMBER COMING THROUGH IS:", this._Activatedroute.snapshot.paramMap.get('page'))
+   let pageString: string | null = this._Activatedroute.snapshot.paramMap.get('page')
+   this.page =  Number(pageString)
+   this.getPokemon();
   }
 
-  // Get 50 pokemon through, and for each one make an individual API call to get unique details. This allows the images to be displayed on the main page.
+  // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
   getPokemon() {
     this.pokemonService.getPokemon(this.page * 50).subscribe((pokemon: any) => {
       this.totalPokemon = pokemon.count;
@@ -42,6 +42,5 @@ export class ResultsDisplayComponent implements OnInit {
           });
       });
     });
-    // console.log('🚨🚨🚨FULLSET', this.pokemonSet);
   }
 }
