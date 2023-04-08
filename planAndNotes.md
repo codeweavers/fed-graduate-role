@@ -68,9 +68,10 @@ TO-DO//BUGS:
 
 
 - change background depending on type of pokemon
-- Find way to capitalise first letters of pokemon name 
-- Clean up dat amore generall: e.g., weight, height
+- Find way to capitalise first letters of pokemon name : Pipe
+- Clean up data more generall: e.g., weight, height: Pipe
 - Get held items displaying as images
+- Account for when pokemon do NOT have sufficient images
 
 Additional features:
 - Filter by type

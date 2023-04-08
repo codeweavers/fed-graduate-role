@@ -10,7 +10,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class ResultsDisplayComponent implements OnInit {
   // pokemon: PokemonType[] = [];
-  page: number = 1;
+  page: number = 0;
   totalPokemon: number;
   pokemonSet: any = [];
 
@@ -20,35 +20,32 @@ export class ResultsDisplayComponent implements OnInit {
     private router: Router
   ) {}
 
-  // Get all pokemon when component is created .
+  // Get pokemon on component load (converting string from params into number so it can be used to calculate offset)
   ngOnInit(): void {
     this._Activatedroute.queryParams.subscribe((params) => {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
     });
-    // console.log('currently on page:', this.page);
-
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
   getPokemon() {
-    this.pokemonService.getPokemon(this.page * 50).
-    
-    subscribe((pokemon: any) => {
-      this.totalPokemon = pokemon.count;
-this.pokemonSet=[] 
+    console.log('THIS PAGEL', this.page);
+    this.pokemonService
+      .getPokemon((this.page-1)*50)
+      .subscribe((pokemon: any) => {
+        this.totalPokemon = pokemon.count;
+        this.pokemonSet = [];
 
-      // Store all unique pokemon details for this batch in an array called pokemonSet
-      pokemon.results.forEach((result: any) => {
-        this.pokemonService
-          .getSpecificPokemon(result.name)
-          .subscribe((uniqueResponse: any) => {
-            this.pokemonSet.push(uniqueResponse);
-          });
+        // Store all unique pokemon details for this batch in an array called pokemonSet
+        pokemon.results.forEach((result: any) => {
+          this.pokemonService
+            .getSpecificPokemon(result.name)
+            .subscribe((uniqueResponse: any) => {
+              this.pokemonSet.push(uniqueResponse);
+            });
+        });
       });
-    });
-
-
   }
 }
