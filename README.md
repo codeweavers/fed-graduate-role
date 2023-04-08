@@ -182,9 +182,20 @@ This is the easiest way to run and develop your app locally.
 
 ### Continuation from 6/4/23: 
 - Working on figuring out bugs that pop up in the console, e.g. ERROR 'The selector "app-root" did not match any elements'. Have done some research on Stack Overflow and Reddit and have found out it might be because there is an issue with the html structure (particularly as I'd already added Bootstrap into the mix... oops!). I have managed to make this ERROR message go away by calling the HTML "app-header" but have a new one: ERROR 'The selector "app-header" did not match any elements'. Ah, opk - that's the same ERROR, just a different flavour!
-- Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Say issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));`. Will give it a go
+- Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Same issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));`. Will give it a go
 - Interesting: if I get rid of lines 6 and 7 from 'main.ts', the ERROR messages disappear - is this good?! 🤔 I will stick a pin in here, as I'm not sure if getting rid of that was a good idea or not!
 
 ### Getting Data in Angular 👀
+- Got a bit sidetracked looking up similarities between knitting and code!
+- MUCH quicker at making compionents in Angular now!
+- Still not showing what I need on the Live Server, so I tried to edit out all the Bootstrap stuff.
+- ERROR 'src/app/services/data.service.ts:15:1 - error TS2304: Cannot find name 'getPokemons'.' 
+- Have looked back at code around this and can't see any bugs, will keep working on it
+- Looks like an issue with 'data.service.ts'
+- Tempted at this point to start again: may be quicker! 
+- This time, I'll start with the Angular app and go from there (no Bootstrap till later!)
+- I'll use what I've learned so far
 
+### PM
 
+- Restarting, as have got in a muddle with Angular + Bootstrap
