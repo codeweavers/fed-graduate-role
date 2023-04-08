@@ -174,4 +174,13 @@ This is the easiest way to run and develop your app locally.
 - YAY it's now working on port 4200 
 - I think because I've already imported Bootstrap, It's not showing up the Header. In future projects, I'll get Angular set up first!
 - I've commented out Bootstrap, but the page is still not showing. WARNING in Console reads: 'non-JS module files deprecated.' 
-- Have commented Bootstrap back in again...👀
+- Have commented Bootstrap back in again...
+
+## Process (8/4/23) 
+
+### AM
+
+- Working on figuring out bugs that pop up in the console, e.g. ERROR 'The selector "app-root" did not match any elements'. Have done some research on Stack Overflow and Reddit and have found out it might be because there is an issue with the html structure (particularly as I'd already added Bootstrap into the mix... oops!). I have managed to make this ERROR message go away by calling the HTML "app-header" but have a new one: ERROR 'The selector "app-header" did not match any elements'. Ah, opk - that's the same ERROR, just a different flavour!
+- Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Say issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));` - will give it a go
+- Interesting: if I get rid of lines 6 and 7 from 'main.ts', the ERROR messages disappear - is this good?! 🤔 👀
+
