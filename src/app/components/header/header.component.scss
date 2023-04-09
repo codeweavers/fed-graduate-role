@@ -1,7 +1,15 @@
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
-    background-color: rgb(255, 204, 63);
+    background: linear-gradient(rgb(255, 204, 63), rgb(255, 227, 150));
+    box-shadow: 9px 9px 13px #e8e8e8, -9px -9px 13px #ffffff;
 }
+a{display: flex; align-items: center;
+}
+h1{
+    color: white;
+    text-shadow: -1px -1px 0 #004289, 1px -1px 0 #004289, -1px 1px 0 #004289, 2px 2px 0 #004289;
+}
+// TRY shadow effect with this colour #004289

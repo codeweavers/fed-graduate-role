@@ -12,7 +12,7 @@ export interface PokemonType {
   name: '';
   order: number;
   past_types: [];
-  species: {};
+  species: {name: string};
   sprites: {
     back_default: string;
     back_female: string;
@@ -24,6 +24,6 @@ export interface PokemonType {
     front_shiny_female: string;
   };
   stats: [];
-  types: [];
+  types: [{slot: number, type: {name: string, url: string, colour?: string}}];
   weight: number;
 }

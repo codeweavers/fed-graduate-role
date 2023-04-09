@@ -1,7 +1,13 @@
+p{
+  margin: 0px;
+}
+
 .abilities {
   display: flex;
   gap: 5px;
+  flex: flex-wrap;
 }
+
 .data {
   background-color: rgb(255, 250, 243);
   width: 100%;
@@ -14,12 +20,11 @@
   background-color: #f3d74c;
   justify-content: center;
   display: flex;
-  width: 300px;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 9px 9px 13px #e8e8e8, -9px -9px 13px #ffffff;
+  box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;
 }
 
 .images {
@@ -29,9 +34,20 @@
   display: flex;
   justify-content: center;
 }
+img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.card:hover .img-top {
+  display: inline;
+}
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }

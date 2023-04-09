@@ -1,18 +1,23 @@
-import { Component, OnInit, Input,} from '@angular/core';
-import { PokemonType } from 'Pokemon';
+import { Component, OnInit, Input } from '@angular/core';
+import { PokemonType } from 'PokemonType';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrls: ['./result.component.scss'],
 })
-
 export class ResultComponent implements OnInit {
-@Input() pokemon: PokemonType;
+  @Input() pokemon: PokemonType;
+  types: any;
 
-  constructor(){};
-  ngOnInit():void{
-    // console.log("POKEMON ON RESULT:", this.pokemon)
-  };
+  constructor( private pokemonService: PokemonService) {}
+  
 
+  ngOnInit(): void {
+    // Create an array of objects to use for conditional rendering, with each object containng the type name and the colour code associated with it
+    this.types = this.pokemon.types.map((type) => {
+      return {name: type.type.name, colour: this.pokemonService.getTypeColour(type.type.name) }
+    });
+  }
 }

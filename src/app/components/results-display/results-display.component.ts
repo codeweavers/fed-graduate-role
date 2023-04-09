@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonType } from 'Pokemon';
+import { PokemonType } from 'PokemonType';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
@@ -26,14 +26,14 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
+      
     });
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
   getPokemon() {
-    console.log('THIS PAGEL', this.page);
     this.pokemonService
-      .getPokemon((this.page-1)*50)
+      .getPokemon((this.page - 1) * 50)
       .subscribe((pokemon: any) => {
         this.totalPokemon = pokemon.count;
         this.pokemonSet = [];
@@ -47,5 +47,6 @@ export class ResultsDisplayComponent implements OnInit {
             });
         });
       });
+    
   }
 }

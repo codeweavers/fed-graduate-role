@@ -1,10 +1,14 @@
 
-
-  <div class="card result-div">
+<a routerLink="../pokemon/{{pokemon.name}}"class="btn" >
+  <div class="card-body p-0">
+    <p class="card-header">
+      {{pokemon.species.name | titlecase}}
+    </p>
     <img [src]="pokemon.sprites.front_default" alt="pokemon"class="card-img-top"/>
-    <div class="card-body">
-        <p>{{pokemon.name | titlecase}}</p>
-     
+    <div class="types">
+      <p *ngFor="let type of types" class="p-1 rounded m-1" [style.background-color]="type.colour">{{type.name | uppercase}} </p>
     </div>
- <a routerLink="../pokemon/{{pokemon.name}}">See more</a>
+     <h6 class="card-subtitle">Card subtitle</h6>
+
   </div>
+</a>
