@@ -2,10 +2,9 @@
 img {
   max-width: 100%;
 }
-
-
-.grass{
-background-color: green;
+.types{
+  display: flex;
+  font-size: small;
 }
 
 a {
@@ -15,13 +14,11 @@ a {
   box-shadow: #422800 2px 2px 0 0;
   color: #422800;
   cursor: pointer;
-  // width: 10px;
   display: inline-block;
   font-weight: 600;
   font-size: 14px;
   padding: 0 10px;
   margin: 20px;
-  // line-height: 50px;
   text-align: center;
   text-decoration: none;
   user-select: none;
@@ -30,7 +27,8 @@ a {
 }
 
 a:hover {
-  background-color: #fff;
+  background-color: #f3d74c;
+  ;
 }
 
 a:active {

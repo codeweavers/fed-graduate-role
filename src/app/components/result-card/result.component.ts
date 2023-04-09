@@ -13,7 +13,6 @@ export class ResultComponent implements OnInit {
   constructor() {}
   // Function to get correct colour from type that can be passed into the conditional styling. Initially I tried using ternary chaining here, but it wasn't working beyond two colours - and It's generally bad practice as I understand (although I'm not convinced this is easier to read)
   getTypeColour(type: string): string {
-    console.log('🚨GET COLOUR FIRED');
     switch (type) {
       case 'psychic':
         return '#F85888';
@@ -57,15 +56,9 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Create an array of types to use for conditional rendering, and then use getTypeColour to add a colour property to each type in the pokemon data object so it can be used in the detail view as well.
-
-    // this.types = this.pokemon.types.map((type) => [type.type.name, this.getTypeColour(type.type.name,) ]);
-
+    // Create an array of objects to use for conditional rendering, with each object containng the type name and the colour code associated with it
     this.types = this.pokemon.types.map((type) => {
-      let res: any = {};
-      res.name = type.type.name;
-      res.colour = this.getTypeColour(type.type.name);
-      return res;
+      return {name: type.type.name, colour: this.getTypeColour(type.type.name) }
     });
   }
 }

@@ -12,7 +12,7 @@ export interface PokemonType {
   name: '';
   order: number;
   past_types: [];
-  species: {};
+  species: {name: string};
   sprites: {
     back_default: string;
     back_female: string;

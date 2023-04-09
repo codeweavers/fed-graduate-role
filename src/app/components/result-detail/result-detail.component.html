@@ -1,8 +1,7 @@
 <div class="main">
     <div class="card">
   <div class="images">
-    <img [src]="pokemonData.sprites.front_default" alt="pokemon" />
-    <img [src]="pokemonData.sprites.back_default" alt="pokemon" />
+    <img *ngFor="let sprite of defaultSprites" [src]="sprite[1]" alt="sprite[1]" />
   </div>
   <div class="data">
     <h1>
@@ -17,7 +16,7 @@
 
     <div class="abilities">
       <p>Abilities:</p>
-      <p *ngFor="let ability of pokemonData.abilities">
+      <p *ngFor="let ability of pokemonData.abilities" class="px-1 rounded " style="background-color: red;" >
         {{ ability["ability"]["name"] | titlecase}}
       </p>
     </div>
