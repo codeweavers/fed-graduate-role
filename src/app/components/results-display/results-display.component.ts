@@ -26,6 +26,9 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
+      
+      this.pokemonService.addTypeColour(this.pokemonSet).subscribe((response: any)=>this.pokemonSet = response)
+    console.log('🚨🚨🚨FULL SET:', this.pokemonSet);
     });
   }
 
@@ -46,6 +49,6 @@ export class ResultsDisplayComponent implements OnInit {
             });
         });
       });
-    console.log('FULL SET:', this.pokemonSet);
+    
   }
 }

@@ -24,6 +24,6 @@ export interface PokemonType {
     front_shiny_female: string;
   };
   stats: [];
-  types: [{slot: number, type: {name: string, url: string}}];
+  types: [{slot: number, type: {name: string, url: string, colour?: string}}];
   weight: number;
 }

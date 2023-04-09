@@ -28,14 +28,7 @@ export class ResultDetailComponent implements OnInit {
       console.log('ERROR:', e);
       return;
     }
-    // console.log(
-    //   '🚨 this DATA after API call value returned from service:',
-    //   this
-    // );
-    // console.log('🚨ITEM', this.pokemonData.held_items);
 
-    // This approach ( plus puling in ActivatedRoute to the constructor) was carrying data through, but the URLs were not shareable as the data relied on navigation history.
-    // this.pokemonName = this.route.snapshot.paramMap.get('name');
-    // this.pokemon = history.state.data;
   }
+
 }
