@@ -27,6 +27,7 @@ export class PokemonService {
 
   // Function to get correct colour from type that can be passed into the conditional styling. Initially I tried using ternary chaining here, but it wasn't working beyond two colours - and It's generally bad practice as I understand (although I'm not convinced this is easier to read)
   getTypeColour(type: string): string {
+    console.log("🚨GET COLOUR FIRED")
     switch (type) {
       case 'psychic':
         return '#F85888';
@@ -71,11 +72,14 @@ export class PokemonService {
 
   // 🚨Change return type here
   addTypeColour(pokemonSet: PokemonType[]): any {
+    console.log("🚨ADD TYPE COLOUR FIRED")
+
     let pokemonSetColours = pokemonSet.forEach((pokemon) => {
       pokemon.types.forEach(
         (type) => (type.type['colour'] = this.getTypeColour(type.type.name))
       );
     });
+    console.log("set with colours:", pokemonSetColours)
     return pokemonSetColours;
   }
 }
