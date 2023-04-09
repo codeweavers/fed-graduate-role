@@ -66,13 +66,14 @@ TO-DO//BUGS:
     - This pagination is not PART of the results, it is a componet above the header? The cpnditional rendering necessary for 
 
 
-
+- change width of cards responsively displayed - currently too many when small, they're getting stretched
 - change background depending on type of pokemon
 - Find way to capitalise first letters of pokemon name : Pipe
 - Clean up data more generall: e.g., weight, height: Pipe
 - Get held items displaying as images
 - Account for when pokemon do NOT have sufficient images
 - remove huphens from pokemon names
+- Add aria labels 
 
 Additional features:
 - Filter by type

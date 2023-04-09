@@ -10,7 +10,6 @@ export class PaginationComponent implements OnInit {
   constructor(private pokemonService: PokemonService) {}
   pagesArray: number[];
   @Input() totalPokemon: number;
-
   ngOnInit(): void {
     this.getPagesArray();
   }

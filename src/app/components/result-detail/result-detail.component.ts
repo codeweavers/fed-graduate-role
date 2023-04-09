@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { ActivatedRoute } from '@angular/router';
-import { PokemonType } from 'Pokemon';
+import { PokemonType } from 'PokemonType';
 @Component({
   selector: 'app-result-detail',
   templateUrl: './result-detail.component.html',
@@ -18,14 +18,16 @@ export class ResultDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonName = this._Activatedroute.snapshot.paramMap.get('name');
-   
+
     //PUT IN ERROR HANDLING!
-   try{ this.pokemonService
-      .getSpecificPokemon(this.pokemonName)
-      .subscribe((pokemon) => (this.pokemonData = pokemon));} catch(e){
-        console.log("ERROR:", e);
-        return;
-      }
+    try {
+      this.pokemonService
+        .getSpecificPokemon(this.pokemonName)
+        .subscribe((pokemon) => (this.pokemonData = pokemon));
+    } catch (e) {
+      console.log('ERROR:', e);
+      return;
+    }
     // console.log(
     //   '🚨 this DATA after API call value returned from service:',
     //   this
