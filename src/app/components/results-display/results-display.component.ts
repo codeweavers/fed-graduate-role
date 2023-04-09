@@ -27,8 +27,6 @@ export class ResultsDisplayComponent implements OnInit {
       this.page = Number(pageString);
       this.getPokemon();
       
-      this.pokemonService.addTypeColour(this.pokemonSet).subscribe((response: any)=>this.pokemonSet = response)
-    console.log('🚨🚨🚨FULL SET:', this.pokemonSet);
     });
   }
 

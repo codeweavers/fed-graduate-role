@@ -5,7 +5,7 @@
       {{pokemon.name | titlecase}}
     </p>
     <img [src]="pokemon.sprites.front_default" alt="pokemon"class="card-img-top"/>
-      <p *ngFor="let type of types"  [style.background-color]="type.colour">{{type}}</p>
+      <p *ngFor="let type of types"  [style.background-color]="type.colour">{{type.name}}</p>
      <h6 class="card-subtitle">Card subtitle</h6>
  <a routerLink="../pokemon/{{pokemon.name}}" class="btn">See more</a>
   </div>
