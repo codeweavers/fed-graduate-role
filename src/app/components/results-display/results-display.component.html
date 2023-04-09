@@ -2,13 +2,12 @@
   <ul class="pagination my-3 pagination-sm">
     <app-pagination [totalPokemon]="totalPokemon"></app-pagination>
   </ul>
-
+  <app-search-bar (searchEvent)="getSearchedPokemon($event)"></app-search-bar>
   <div class="row g-3">
     <app-result
-      class="col-sm-3 col-lg-3 col-12 col-xl-2 card "
+      class="col-sm-3 col-lg-3 col-12 col-xl-2 card"
       *ngFor="let pokemon of pokemonSet"
       [pokemon]="pokemon"
     ></app-result>
   </div>
-
 </div>

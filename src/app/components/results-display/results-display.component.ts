@@ -26,7 +26,6 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
-      
     });
   }
 
@@ -47,6 +46,22 @@ export class ResultsDisplayComponent implements OnInit {
             });
         });
       });
-    
+  }
+  getSearchedPokemon(searchTerm: string) {
+    // this.pokemonSet.push(this.pokemonService.getSpecificPokemon(searchTerm));
+
+    let res: any = [];
+    this.pokemonService.getSpecificPokemon(searchTerm).subscribe((response) => {
+      res.push(response);
+      if (this.checkResult(res)) {
+        this.pokemonSet = [];
+        this.pokemonSet.push(...res);
+      }
+    });
+  }
+  checkResult(result: any) {
+    console.log('check fired');
+
+    return result.length > 0 ? true : false;
   }
 }

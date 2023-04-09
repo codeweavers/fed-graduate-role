@@ -17,6 +17,7 @@ import { ResultDetailComponent } from './components/result-detail/result-detail.
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { convertHeightPipe } from './pipes/convertHeight';
 import { convertWeightPipe } from './pipes/convertWeight';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { convertWeightPipe } from './pipes/convertWeight';
     PaginationComponent,
     convertHeightPipe,
     convertWeightPipe,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
