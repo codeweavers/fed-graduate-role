@@ -1,25 +1,33 @@
 <div class="main">
-    <div class="card">
-  <div class="images">
-    <img *ngFor="let sprite of defaultSprites" [src]="sprite[1]" alt="sprite[1]" />
-  </div>
-  <div class="data">
-    <h1>
-     {{ pokemonName| titlecase}}
-    </h1>
-<p>Weight: {{pokemonData.weight | convertWeight }}</p>
-    <p>Height: {{ pokemonData.height | convertHeight }}</p>
-    <div class="abilities" *ngFor="let stat of pokemonData.stats">
-      <p>{{ stat["stat"]["name"] | titlecase}}:</p>
-      <p>{{ stat["base_stat"] }}</p>
+  <div class="card">
+    <div class="images">
+      <img
+        *ngFor="let sprite of defaultSprites"
+        [src]="sprite[1]"
+        alt="sprite[1]"
+      />
     </div>
+    <div class="data" [style.background-color]="getCardColour(pokemonData)">
+      <h1>
+        {{ pokemonName | titlecase }}
+      </h1>
+      <p>Weight: {{ pokemonData.weight | convertWeight }}</p>
+      <p>Height: {{ pokemonData.height | convertHeight }}</p>
+      <div class="abilities" *ngFor="let stat of pokemonData.stats">
+        <p>{{ stat["stat"]["name"] | titlecase }}:</p>
+        <p>{{ stat["base_stat"] }}</p>
+      </div>
 
-    <div class="abilities">
-      <p>Abilities:</p>
-      <p *ngFor="let ability of pokemonData.abilities" class="px-1 rounded " style="background-color: red;" >
-        {{ ability["ability"]["name"] | titlecase}}
-      </p>
+      <div class="abilities">
+        <p>Abilities:</p>
+        <p
+          *ngFor="let ability of pokemonData.abilities"
+          class="px-1 rounded"
+          style="background-color: #f3d74c"
+        >
+          {{ ability["ability"]["name"] | titlecase }}
+        </p>
+      </div>
     </div>
   </div>
-</div>
 </div>

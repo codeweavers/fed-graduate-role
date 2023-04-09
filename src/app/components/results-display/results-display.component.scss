@@ -1,11 +1,11 @@
+.card {
+  background: #f3d74c;
+  cursor: pointer;
+box-shadow:  4px 4px 6px #c5c5c5,
+             
+}
 
-    .card {
-        background: #f3d74c;
-        cursor: pointer;
-      }
-      
-      .card:hover {
-        background-color: #fff4da;
-        transform: translate(2px, 2px);
-      }
-      
+.card:hover {
+  background-color: #fff4da;
+  transform: translate(2px, 2px);
+}

@@ -1,5 +1,5 @@
 
-
+<a routerLink="../pokemon/{{pokemon.name}}"class="btn" >
   <div class="card-body p-0">
     <p class="card-header">
       {{pokemon.species.name | titlecase}}
@@ -9,5 +9,6 @@
       <p *ngFor="let type of types" class="p-1 rounded m-1" [style.background-color]="type.colour">{{type.name | uppercase}} </p>
     </div>
      <h6 class="card-subtitle">Card subtitle</h6>
- <a routerLink="../pokemon/{{pokemon.name}}" class="btn">See more</a>
+
   </div>
+</a>
