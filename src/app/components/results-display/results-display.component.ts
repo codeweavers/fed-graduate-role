@@ -26,7 +26,8 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
-    });
+    },  (error) => {                              //Error callback
+      console.error('error caught in component', error)});
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
