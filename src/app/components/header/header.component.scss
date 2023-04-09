@@ -1,7 +1,10 @@
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
-    background-color: rgb(255, 204, 63);
+    background: linear-gradient(rgb(255, 204, 63), rgb(255, 227, 150));
+    box-shadow: 9px 9px 13px #e8e8e8, -9px -9px 13px #ffffff;
+    
+
 }

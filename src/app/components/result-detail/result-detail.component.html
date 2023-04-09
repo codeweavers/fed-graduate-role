@@ -5,20 +5,20 @@
     <img [src]="pokemonData.sprites.back_default" alt="pokemon" />
   </div>
   <div class="data">
-    <p>
-      This pokemon is {{ pokemonName| titlecase}}
-    </p>
+    <h1>
+     {{ pokemonName| titlecase}}
+    </h1>
 <p>Weight: {{pokemonData.weight | convertWeight }}</p>
     <p>Height: {{ pokemonData.height | convertHeight }}</p>
     <div class="abilities" *ngFor="let stat of pokemonData.stats">
-      <p>{{ stat["stat"]["name"] }}:</p>
+      <p>{{ stat["stat"]["name"] | titlecase}}:</p>
       <p>{{ stat["base_stat"] }}</p>
     </div>
 
     <div class="abilities">
       <p>Abilities:</p>
       <p *ngFor="let ability of pokemonData.abilities">
-        {{ ability["ability"]["name"] }}
+        {{ ability["ability"]["name"] | titlecase}}
       </p>
     </div>
   </div>
