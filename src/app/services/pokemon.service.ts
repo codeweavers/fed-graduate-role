@@ -16,17 +16,8 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   // Get batch of 50 pokemon from specific offset
-  getPokemon(offset: number): Observable<PokemonList> | any {
-    return this.http.get<PokemonList>(`${this.apiUrl}&offset=${offset}`).pipe(
-      catchError((err) => {
-        console.log('error caught in service');
-        console.error(err);
-
-        //Handle the error here
-
-        return throwError(err); //Rethrow it back to component
-      })
-    );
+  getPokemon(offset: number): Observable<PokemonList>{
+    return this.http.get<PokemonList>(`${this.apiUrl}&offset=${offset}`)
   }
 
   getSpecificPokemon(name: string): Observable<PokemonType> {

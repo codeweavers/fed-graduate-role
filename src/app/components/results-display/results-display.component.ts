@@ -26,8 +26,7 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
-    },  (error) => {                              //Error callback
-      console.error('error caught in component', error)});
+    });
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
@@ -37,20 +36,12 @@ export class ResultsDisplayComponent implements OnInit {
       .subscribe((pokemon: any) => {
         this.totalPokemon = pokemon.count;
         this.pokemonSet = [];
-
-        // Store all unique pokemon details for this batch in an array called pokemonSet
-        pokemon.results.forEach((result: any) => {
-          this.pokemonService
-            .getSpecificPokemon(result.name)
-            .subscribe((uniqueResponse: any) => {
-              this.pokemonSet.push(uniqueResponse);
-            });
-        });
+        this.getPokemonSetDetails(pokemon.results);
       });
   }
-  getSearchedPokemon(searchTerm: string) {
-    // this.pokemonSet.push(this.pokemonService.getSpecificPokemon(searchTerm));
 
+  // Get specifc searched pokemon result
+  getSearchedPokemon(searchTerm: string) {
     let res: any = [];
     this.pokemonService.getSpecificPokemon(searchTerm).subscribe((response) => {
       res.push(response);
@@ -58,11 +49,24 @@ export class ResultsDisplayComponent implements OnInit {
         this.pokemonSet = [];
         this.pokemonSet.push(...res);
       }
+    }, error=> {
+      console.log("ERROR:", error);
+      if(error.status){window.alert(`${searchTerm} ${error.error}. We couldn't get it from the pokedex - try checking your spelling?`)};
     });
   }
-  checkResult(result: any) {
-    console.log('check fired');
 
+  //Uses data (names and URLs) from inital batch call to populate pokemon array with individual data for each pokemon
+  getPokemonSetDetails(pokemon: PokemonType[]) {
+    pokemon.forEach((result: any) => {
+      this.pokemonService
+        .getSpecificPokemon(result.name)
+        .subscribe((uniqueResponse: any) => {
+          this.pokemonSet.push(uniqueResponse);
+        });
+    });
+  }
+
+  checkResult(result: any) {
     return result.length > 0 ? true : false;
   }
 }
