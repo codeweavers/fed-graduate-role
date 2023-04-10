@@ -1,6 +1,5 @@
 <div class="container" aria-label="page navigation buttons">
   <ul class="pagination my-3 pagination-sm">
-    <app-pagination [totalPokemon]="totalPokemon"></app-pagination>
   </ul>
   <app-search-bar (searchEvent)="getSearchedPokemon($event)"></app-search-bar>
   <div class="row g-3">
@@ -9,5 +8,7 @@
       *ngFor="let pokemon of pokemonSet"
       [pokemon]="pokemon"
     ></app-result>
+    <app-pagination [totalPokemon]="totalPokemon"></app-pagination>
+
   </div>
 </div>
