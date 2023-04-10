@@ -29,9 +29,9 @@ export class ResultDetailComponent implements OnInit {
   getCardColour(pokemon: PokemonType): string {
     return this.pokemonService.getTypeColour(pokemon.types[0].type.name);
   }
+  
   ngOnInit(): void {
     this.pokemonName = this._Activatedroute.snapshot.paramMap.get('name');
-    //PUT IN ERROR HANDLING!
     this.pokemonService
       .getSpecificPokemon(this.pokemonName)
       .subscribe((pokemon) => {

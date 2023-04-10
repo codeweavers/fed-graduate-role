@@ -24,24 +24,24 @@ FUNCTIONALITY:
 - Do research into boostrap as this will affect the direction of the design 
 - play around in repo to see how it' fitting together
 - Check boostrap setup in repo (ref here https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application/)
-- Component tree
+- DONE Component tree
 - Data flow diagram 
-- Build simple prototype to test whether I've got enough understanding to get going
+- DONE Build simple prototype to test whether I've got enough understanding to get going
 - DONE - Set up router
-- Set up skeleton components:
+- DONE Set up skeleton components:
     - display
     - result card
     - result detail
     - header
     - footer
-- Pagination for display of results https://www.youtube.com/watch?v=ov9UqIEa8Zs 
-- Set up dynamic routing:
+- DONE Pagination for display of results https://www.youtube.com/watch?v=ov9UqIEa8Zs 
+- DONE Set up dynamic routing:
     - NB: these routes must be SHAREABLE! I.e., not depend on historical navigation (missed this on first attempt)
     - They must render pokemon data dynamically 
     
 - Look into the tests that Angular spins up automatically
 - wildcard routing for 404 page
-- Deploy!
+- DONE Deploy!
 
 
 RESOURCES

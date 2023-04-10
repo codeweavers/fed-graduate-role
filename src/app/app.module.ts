@@ -9,7 +9,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ResultsDisplayComponent } from './components/results-display/results-display.component';
 import { ResultComponent } from './components/result-card/result.component';
-import { ButtonComponent } from './components/button/button.component';
 import { AboutComponent } from './components/about/about.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -27,7 +26,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     FooterComponent,
     ResultsDisplayComponent,
     ResultComponent,
-    ButtonComponent,
     AboutComponent,
     PageNotFoundComponent,
     ResultDetailComponent,
