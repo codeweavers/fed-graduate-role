@@ -45,11 +45,11 @@ export class ResultDetailComponent implements OnInit {
         this.pokemonData = pokemon;
         
         // Get encounter location
-        this.pokemonService.getEncounters(pokemon.location_area_encounters).subscribe((result)=>{
-          this.location = result[0].location_area; 
-          // console.log("LOC:", result[0].location_area) 
+        // this.pokemonService.getEncounters(pokemon.location_area_encounters).subscribe((result)=>{
+        //   this.location = result[0].location_area; 
+        //   // console.log("LOC:", result[0].location_area) 
 
-        })
+        // })
       });
      }
 }
