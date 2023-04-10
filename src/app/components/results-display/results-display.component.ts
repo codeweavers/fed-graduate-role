@@ -26,7 +26,6 @@ export class ResultsDisplayComponent implements OnInit {
       let pageString: string | null = (this.page = params['page']);
       this.page = Number(pageString);
       this.getPokemon();
-      
     });
   }
 
@@ -37,16 +36,37 @@ export class ResultsDisplayComponent implements OnInit {
       .subscribe((pokemon: any) => {
         this.totalPokemon = pokemon.count;
         this.pokemonSet = [];
-
-        // Store all unique pokemon details for this batch in an array called pokemonSet
-        pokemon.results.forEach((result: any) => {
-          this.pokemonService
-            .getSpecificPokemon(result.name)
-            .subscribe((uniqueResponse: any) => {
-              this.pokemonSet.push(uniqueResponse);
-            });
-        });
+        this.getPokemonSetDetails(pokemon.results);
       });
-    
+  }
+
+  // Get specifc searched pokemon result
+  getSearchedPokemon(searchTerm: string) {
+    let res: any = [];
+    this.pokemonService.getSpecificPokemon(searchTerm).subscribe((response) => {
+      res.push(response);
+      if (this.checkResult(res)) {
+        this.pokemonSet = [];
+        this.pokemonSet.push(...res);
+      }
+    }, error=> {
+      console.log("ERROR:", error);
+      if(error.status){window.alert(`${searchTerm} ${error.error}. We couldn't get it from the pokedex - try checking your spelling?`)};
+    });
+  }
+
+  //Uses data (names and URLs) from inital batch call to populate pokemon array with individual data for each pokemon
+  getPokemonSetDetails(pokemon: PokemonType[]) {
+    pokemon.forEach((result: any) => {
+      this.pokemonService
+        .getSpecificPokemon(result.name)
+        .subscribe((uniqueResponse: any) => {
+          this.pokemonSet.push(uniqueResponse);
+        });
+    });
+  }
+
+  checkResult(result: any) {
+    return result.length > 0 ? true : false;
   }
 }
