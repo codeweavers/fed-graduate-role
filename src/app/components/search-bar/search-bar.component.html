@@ -1,5 +1,9 @@
-<div>
-    <label for="search-term">Find a pokemon:</label>
-    <input type="text" id="search-term" #searchTerm>
-    <button type="button" (click)="runSearch(searchTerm.value)">GO</button>
+<form class="d-flex justify-content-center align-items-center">
+<div class="form-group row p-3">
+    <!-- <div class="col-lg-12"> -->
+    <label for="search-term" class="">Find a pokemon:</label>
+    <input type="text" placeholder="Pokemon name here..." id="search-term" #searchTerm class="form-control form-control-sm  w-50 h-50">
+    <button type="button" (click)="runSearch(searchTerm.value)" class="btn btn-warning btn-sm h-25 w-25" >GO</button>
 </div>
+<!-- </div> -->
+</form>
