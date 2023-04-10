@@ -18,6 +18,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { convertHeightPipe } from './pipes/convertHeight';
 import { convertWeightPipe } from './pipes/convertWeight';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormatLocationPipe } from './pipes/format-location.pipe';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     convertHeightPipe,
     convertWeightPipe,
     SearchBarComponent,
+    FormatLocationPipe,
   ],
   imports: [
     BrowserModule,
