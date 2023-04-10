@@ -17,7 +17,7 @@ export class ResultDetailComponent implements OnInit {
   pokemonName: any;
   pokemon: Object;
   pokemonData: PokemonType;
-  defaultSprites: any; 
+  defaultSprites: any;
   location: Location;
   constructor(
     private pokemonService: PokemonService,
@@ -43,15 +43,17 @@ export class ResultDetailComponent implements OnInit {
         console.log('POKEMON:', pokemon);
         this.getAvailableSprites(pokemon.sprites);
         this.pokemonData = pokemon;
-        
+
         // Get encounter location
-        this.pokemonService.getEncounters(pokemon.location_area_encounters).subscribe((result)=>{
-          console.log("observable returned:", result) 
-
-          this.location = result[0].location_area; 
-          console.log("LOC:", result) 
-
-        })
+        this.pokemonService
+          .getEncounters(pokemon.location_area_encounters)
+          .subscribe((result) => {
+            this.location = result[0].location_area;
+            console.log('LOC:', result);
+            this.pokemonService
+              .getEncounterMethod(result[0].location_area.url)
+              .subscribe((result) => console.log('METHOD res:', result));
+          });
       });
-     }
+  }
 }

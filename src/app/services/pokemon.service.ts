@@ -77,4 +77,9 @@ export class PokemonService {
     console.log("encountersObj:", encountersObj);
     return encountersObj;
   }
+
+  // Get encounter method:
+  getEncounterMethod(url: string): Observable<any>{
+    return this.http.get(url);
+  }
 }

@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'formatLocation'
+  name: 'removeHyphens'
 })
-export class FormatLocationPipe implements PipeTransform {
+export class removeHyphensPipe implements PipeTransform {
 
   transform(location: string): string {
     return location.replaceAll("-", " ");
