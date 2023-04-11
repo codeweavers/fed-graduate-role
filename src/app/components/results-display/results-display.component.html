@@ -1,14 +1,11 @@
-<div class="container" aria-label="page navigation buttons">
-  <ul class="pagination my-3 pagination-sm">
-  </ul>
+<div class="container d-flex flex-column pb-10 align-items-center">
   <app-search-bar (searchEvent)="getSearchedPokemon($event)"></app-search-bar>
-  <div class="row g-3">
+  <div class="row  justify-content-center">
     <app-result
-      class="col-sm-3 col-lg-3 col-12 col-xl-2 card bg-primary bg-opacity-10"
+      class="col-6 col-sm-6 col-lg-3 col-xl-2 m-2 card"
       *ngFor="let pokemon of pokemonSet"
       [pokemon]="pokemon"
     ></app-result>
-    <app-pagination [totalPokemon]="totalPokemon"></app-pagination>
-
+    <app-pagination [totalPokemon]="totalPokemon" ></app-pagination>
   </div>
 </div>

@@ -14,8 +14,6 @@ const routes: Routes = [
 ];
 
 
-// HERE above add router link that does same thing, so main page can load except with diff parameter used as offset
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
