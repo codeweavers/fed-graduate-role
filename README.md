@@ -270,3 +270,37 @@ Here are the 3 faults in more detail:
 
 - Let's work through these, one by one.
 
+ERROR 1: Data.service
+
+NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    - What happens if I Google this? 
+    - Stack Overflow forum suggests I add `imports: [HttpClientTestingModule]` to configuration. Have imported `import { HttpClientTestingModule } from '@angular/common/http/testing';` I think it works... 
+    - Going to run `ng test` in terminal again
+    - YAY! ERROR 1 has gone! 🎉🎉🎉 '1 SUCCESS'! 🎉🎉🎉 
+
+ERROR 2: Pokemon-list.component
+
+NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    - Same ERROR as above, so will try same approach.
+    - IT WORKED!!! YAY! 🎉🎉🎉 '2 SUCCESS'! 🎉🎉🎉 😂
+
+ERROR 3: Unexpected ng closing tag
+
+    - In answering ERROR 1, a bug was detailed in the terminal which I think corresponds to ERROR 3. It's fixed! I just tidied up the `<>s`, moved a class to inside a div and deleted a `-`. (🎉🎉🎉)
+
+
+Now, it's failing in a new way. Let's investigate. 
+
+ERROR 4: Header Component
+
+TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
+
+    - Let's Google this error.
+    - I've added renderTemplate to 'header.component.ts' - not sure whether to add 'OnInit' and 'AfterInit', too... 
+    - But is compiled successfully and it says the test is a SUCCESS! 🎉🎉🎉
+
+- Will save for today and come back to tomorrow. 
