@@ -206,7 +206,26 @@ This is the easiest way to run and develop your app locally.
 - Here we go :) 
 - Angular already installed. Installed Node.
 - `ng serve`
-- Oh no - some of the same errors as before: had to delete some of the later additions in Agular, e.g. 'pokemon-list'
+- Oh no - some of the same errors as before: had to delete some of the later additions in Angular, e.g. 'pokemon-list' and 'services'
 - It's now working! Have compiled it successfully :)
 - Ok, next bit - am setting up styling for componenets, but I can't see them on my Live Server. I suspect I've linked the wrong HTML file up (think it's using index.html) but I'm not sure how to fix this. I'm following a tutorial, so I'll see if there's a screenshot of their index.html I can suss out.
-- 
+- Progressing and about to do the GET request, but Live Server is now not showing anything. WARNING message reads: 'crbug/1173575, non-JS module files deprecated. (anonymous) @ VM47:6750' - will Google what this means, as I've seen it before. It's something to do with old ways of testing... ok, have fixed this ERROR. I'm getting different ERRORS now at least! 
+- Now reads: 'main.ts:6 ERROR RangeError: Maximum call stack size exceeded'. This ERROR occurs when there is an infinite loop (oops). Got rid of AppRouting component to see if that helps (it doesn't). I've found this on Stack Overflow: 
+
+### Possible cases for this error which I found:
+
+- 2 or more modules with the same name ✅ (Think I've fixed this...)
+- Wrong imports in your app.module.ts file 🤔 (I'm not sure how to check these - will investigate)
+- Problem with compilation (I will try this if the above fails!)
+
+Solution that you can try:
+
+- for point 1, change the names and make them unique ✅
+- for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔
+- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC.
+
+- Reading this article on component interdependence: https://lukeliutingchun.medium.com/angular-using-component-injection-to-communicate-between-parent-and-dynamic-child-components-99c1c297aa43
+
+- How about using NgTemplateOutlet...? https://lukeliutingchun.medium.com/angular-using-ngtemplateoutlet-to-communicate-between-parent-and-dynamic-child-components-4d74ca9ba9b
+
+- May work better as am using the PokéAPI? 🤔
