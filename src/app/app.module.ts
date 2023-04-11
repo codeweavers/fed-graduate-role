@@ -1,9 +1,9 @@
+//Module imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+// Component imports
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -14,10 +14,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+//Pipe imports
 import { convertHeightPipe } from './pipes/convertHeight';
 import { convertWeightPipe } from './pipes/convertWeight';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-
+import { removeHyphensPipe } from './pipes/format-location.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     convertHeightPipe,
     convertWeightPipe,
     SearchBarComponent,
+    removeHyphensPipe,
   ],
   imports: [
     BrowserModule,

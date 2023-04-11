@@ -1,13 +1,14 @@
-<div class="main">
-  <div class="card">
+<div class="main ">
+  <div class="card m-4 ">
     <div class="images">
       <img
         *ngFor="let sprite of defaultSprites"
         [src]="sprite[1]"
         alt="sprite[1]"
+        class="w-50"
       />
     </div>
-    <div class="data" [style.background-color]="getCardColour(pokemonData)">
+    <div class="data" [style.background-color]="getCardColour(pokemonData)" >
       <h1>
         {{ pokemonName | titlecase }}
       </h1>
@@ -28,6 +29,10 @@
           {{ ability["ability"]["name"] | titlecase }}
         </p>
       </div>
+      <p>Catch 'em: {{(location.method ? location.method + " in" : "No info,") | titlecase}} {{(location.name !== "" ? location.name : "sorry!") | removeHyphens | titlecase }} </p>
     </div>
   </div>
+  <div class="m-5 pb-5">
+  <a routerLink="../../pokemon" class="btn"> Go back</a>
+</div>
 </div>

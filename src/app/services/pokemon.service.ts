@@ -69,4 +69,17 @@ export class PokemonService {
         return 'black';
     }
   }
+
+
+  // Get encounters
+  getEncounters(url: string): Observable<any>{
+    let encountersObj= this.http.get(url);
+    console.log("encountersObj:", encountersObj);
+    return encountersObj;
+  }
+
+  // Get encounter method:
+  getEncounterMethod(url: string): Observable<any>{
+    return this.http.get(url);
+  }
 }

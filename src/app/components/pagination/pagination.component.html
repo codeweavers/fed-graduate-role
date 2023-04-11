@@ -1,9 +1,13 @@
-<li class="page-item d-flex flex-wrap justify-content-center">
-  <a
-    *ngFor="let page of pagesArray"
-    routerLink="../pokemon"
-    [queryParams]="{ page: page }"
-    class="page-link p-2 "
-    >{{ page }}
-  </a>
-</li>
+<!-- Nav used here to identify it as navigation element for screen readers -->
+<nav class="mx-auto">
+  <ul class="text-decoration-none pagination justify-content-center d-flex flex-wrap gy-2">
+  <li *ngFor="let page of pagesArray" class="page-item text-decoration-none">
+    <a
+      routerLink="../pokemon"
+      [queryParams]="{ page: page }"
+      class="page-link p-2 text-decoration-none"
+      >{{ page }}
+    </a>
+  </li>
+</ul>
+</nav>
