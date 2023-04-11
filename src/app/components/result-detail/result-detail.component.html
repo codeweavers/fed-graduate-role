@@ -1,5 +1,5 @@
-<div class="main">
-  <div class="card  ">
+<div class="main ">
+  <div class="card m-4 ">
     <div class="images">
       <img
         *ngFor="let sprite of defaultSprites"
@@ -29,7 +29,10 @@
           {{ ability["ability"]["name"] | titlecase }}
         </p>
       </div>
-      <p>Location: {{location.name | removeHyphens | titlecase }}</p>
+      <p>Catch 'em': {{location.name !== "" ? location.name : "No info" | removeHyphens | titlecase }}, {{location.method ? location.method : "sorry!"}}</p>
     </div>
   </div>
+  <div class="m-5 pb-5">
+  <a routerLink="../../pokemon" class="btn"> Go back</a>
+</div>
 </div>

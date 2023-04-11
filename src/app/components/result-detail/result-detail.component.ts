@@ -5,7 +5,7 @@ import { PokemonType } from 'PokemonType';
 
 interface Location {
   name: string;
-  url: string;
+  method?: string;
 }
 
 @Component({
@@ -18,7 +18,7 @@ export class ResultDetailComponent implements OnInit {
   pokemon: Object;
   pokemonData: PokemonType;
   defaultSprites: any;
-  location: Location;
+  location: Location = {name:"", method:""}
   constructor(
     private pokemonService: PokemonService,
     private _Activatedroute: ActivatedRoute
@@ -48,11 +48,15 @@ export class ResultDetailComponent implements OnInit {
         this.pokemonService
           .getEncounters(pokemon.location_area_encounters)
           .subscribe((result) => {
-            this.location = result[0].location_area;
-            console.log('LOC:', result);
-            this.pokemonService
-              .getEncounterMethod(result[0].location_area.url)
-              .subscribe((result) => console.log('METHOD res:', result));
+            if (result.length > 0) {
+              this.location.name = result[0].location_area.name;
+              console.log('LOC:', result);
+              this.pokemonService
+                .getEncounterMethod(result[0].location_area.url)
+                .subscribe((result) =>this.location.method= result.encounter_method_rates[0].encounter_method.name);
+            } else {
+              console.log('no encounters');
+            }
           });
       });
   }
