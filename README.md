@@ -235,3 +235,10 @@ Solution that you can try:
 - Watching a tutorial on NgTemplateOutlet - will see if this helps 😂
 - Created a 'dev' branch to help me out if I need to reset/tweak further down the line (probably should have done this earlier...)
 - Making 'Pokemon-list' component, then will go back to NgTemplateOutlet guidelines. 
+- Same ERROR as before: 'RangeError: Maximum call stack size exceeded' (main.ts: 6 and 7) I will investigate these - see if anything can be done there...
+- Oh yeah - that's just the general catch-all for if something goes wrong. How do I find out more specific info?
+- ERROR message has gone and been replaced by '[webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.' in the console. What does this mean? 🤔 Will look it up. Stack Overflow: "I'm not much understand how it works, I remove publicPath in webpack.config.js". Ok - will give this a go. Nope - too tricky! Will keep going with tutorials and see where I can get to.
+- Back to setting up the Pokémon List - this way, I'll have at least a couple of components to try out with NGTemplateOutlet
+- ERROR message has gone and it's compiling successfully, but still not showing the results of the Pokémon API...
+- Still seems to be some sort of disconnect between the index.html and the app... will investigate.
+- Will try approach 3 and turn everything off and back on again 😂
