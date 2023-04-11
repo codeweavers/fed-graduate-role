@@ -229,3 +229,8 @@ Solution that you can try:
 - How about using NgTemplateOutlet...? https://lukeliutingchun.medium.com/angular-using-ngtemplateoutlet-to-communicate-between-parent-and-dynamic-child-components-4d74ca9ba9b
 
 - May work better as am using the PokéAPI? 🤔
+
+### PM
+
+- Watching a tutorial on NgTemplateOutlet - will see if this helps 😂
+- 
