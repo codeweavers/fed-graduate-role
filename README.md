@@ -221,8 +221,8 @@ This is the easiest way to run and develop your app locally.
 Solution that you can try:
 
 - for point 1, change the names and make them unique ✅
-- for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔
-- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC. 👀
+- for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔 👀
+- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC. 
 
 - Reading this article on component interdependence: https://lukeliutingchun.medium.com/angular-using-component-injection-to-communicate-between-parent-and-dynamic-child-components-99c1c297aa43
 
@@ -245,4 +245,28 @@ Solution that you can try:
 - Approach 3 did not work.
 - Back to approach 2: trying to understand module interdependence 
 - Going to check what original Angular app component was called to check I've not changed it to something odd
-- Ohh - it's called 'app-root'. I'm going to change all instances of 'app-component' to 'app-root' and see if that helps. It's still not displaying on the Live Server, but at least I know it has the right name now!
+- Ohh - it's called 'app-root'. I'm going to change all instances of 'app-component' to 'app-root' and see if that helps. It's still not displaying on the Live Server, but at least I know it has the right name now - will remember this for future use.
+- Watching a video about error handling in Angular - hopefully some similar errors to those I've come across will come up
+- 🤔 What's a 'standalone component'? (Just out of interest!)
+- Stack Overflow. Following advice, it says "url": "http://localhost:9876/debug.html" in the launch.json - do I need to change this to localhost:4200? Hmm... going to try `ng test` in terminal. Ooh! Lots more information!
+- Reading through more detailed info... 
+
+Here are the 3 faults in more detail:
+
+    1. Data Service = NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    2. Pokemon List Component = NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    3. Unexpected ng closing tag = Error: Errors during JIT compilation of template for HeaderComponent: Unexpected closing tag "-". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
+<h1>Pokedex App</h1>
+<div>class="pokedex-header"</div>
+[ERROR ->]</->
+</ng-template>"): ng:///HeaderComponent/template.html@6:0, Unexpected closing tag "ng-template". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
+<div>class="pokedex-header"</div>
+</->
+[ERROR ->]</ng-template>"): ng:///HeaderComponent/template.html@7:0
+
+- Let's work through these, one by one.
+
