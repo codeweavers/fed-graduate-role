@@ -29,7 +29,7 @@
           {{ ability["ability"]["name"] | titlecase }}
         </p>
       </div>
-      <p>Catch 'em': {{location.name !== "" ? location.name : "No info" | removeHyphens | titlecase }}, {{location.method ? location.method : "sorry!"}}</p>
+      <p>Catch 'em': {{(location.name !== "" ? location.name : "No info") | removeHyphens | titlecase }}, {{location.method ? location.method : "sorry!"}}</p>
     </div>
   </div>
   <div class="m-5 pb-5">
