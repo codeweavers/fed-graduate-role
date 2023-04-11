@@ -200,7 +200,7 @@ This is the easiest way to run and develop your app locally.
 
 - Restarting, as have got in a muddle with Angular + Bootstrap
 
-## Process (11/4/23) 👀
+## Process (11/4/23) 
 
 - Picking up from where I left off - rebooting file to do the Angular bits first!
 - Here we go :) 
@@ -222,7 +222,7 @@ Solution that you can try:
 
 - for point 1, change the names and make them unique ✅
 - for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔
-- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC.
+- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC. 👀
 
 - Reading this article on component interdependence: https://lukeliutingchun.medium.com/angular-using-component-injection-to-communicate-between-parent-and-dynamic-child-components-99c1c297aa43
 
@@ -242,3 +242,7 @@ Solution that you can try:
 - ERROR message has gone and it's compiling successfully, but still not showing the results of the Pokémon API...
 - Still seems to be some sort of disconnect between the index.html and the app... will investigate.
 - Will try approach 3 and turn everything off and back on again 😂
+- Approach 3 did not work.
+- Back to approach 2: trying to understand module interdependence 
+- Going to check what original Angular app component was called to check I've not changed it to something odd
+- Ohh - it's called 'app-root'. I'm going to change all instances of 'app-component' to 'app-root' and see if that helps. It's still not displaying on the Live Server, but at least I know it has the right name now!
