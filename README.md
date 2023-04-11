@@ -199,3 +199,7 @@ This is the easiest way to run and develop your app locally.
 ### PM
 
 - Restarting, as have got in a muddle with Angular + Bootstrap
+
+## Process (11/4/23)
+
+- Picking up from where I left off - rebooting file to do the Angular bits first!
