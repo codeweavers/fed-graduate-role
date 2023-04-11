@@ -233,4 +233,5 @@ Solution that you can try:
 ### PM
 
 - Watching a tutorial on NgTemplateOutlet - will see if this helps 😂
-- 
+- Created a 'dev' branch to help me out if I need to reset/tweak further down the line (probably should have done this earlier...)
+- Making 'Pokemon-list' component, then will go back to NgTemplateOutlet guidelines. 
