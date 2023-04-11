@@ -1,2 +1,13 @@
-@import "bootstrap/scss/bootstrap";
+//@import "bootstrap/scss/bootstrap";
+
+/* Base */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 

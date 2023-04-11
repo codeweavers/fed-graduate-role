@@ -185,7 +185,7 @@ This is the easiest way to run and develop your app locally.
 - Am going to try a different name, as perhaps it's getting muddied with the Bootstrap stuff. Will try "my-app". Same issue. Says it's a problem with line 7 of main.ts `.catch(err => console.error(err));`. Reading some info on Stack Overflow, I may get more info about the error if I don't use `.catch(err => console.error(err));`. Will give it a go
 - Interesting: if I get rid of lines 6 and 7 from 'main.ts', the ERROR messages disappear - is this good?! 🤔 I will stick a pin in here, as I'm not sure if getting rid of that was a good idea or not!
 
-### Getting Data in Angular 👀
+### Getting Data in Angular 
 - Got a bit sidetracked looking up similarities between knitting and code!
 - MUCH quicker at making compionents in Angular now!
 - Still not showing what I need on the Live Server, so I tried to edit out all the Bootstrap stuff.
@@ -200,6 +200,13 @@ This is the easiest way to run and develop your app locally.
 
 - Restarting, as have got in a muddle with Angular + Bootstrap
 
-## Process (11/4/23)
+## Process (11/4/23) 👀
 
 - Picking up from where I left off - rebooting file to do the Angular bits first!
+- Here we go :) 
+- Angular already installed. Installed Node.
+- `ng serve`
+- Oh no - some of the same errors as before: had to delete some of the later additions in Agular, e.g. 'pokemon-list'
+- It's now working! Have compiled it successfully :)
+- Ok, next bit - am setting up styling for componenets, but I can't see them on my Live Server. I suspect I've linked the wrong HTML file up (think it's using index.html) but I'm not sure how to fix this. I'm following a tutorial, so I'll see if there's a screenshot of their index.html I can suss out.
+- 
