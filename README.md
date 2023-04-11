@@ -200,7 +200,7 @@ This is the easiest way to run and develop your app locally.
 
 - Restarting, as have got in a muddle with Angular + Bootstrap
 
-## Process (11/4/23) 👀
+## Process (11/4/23) 
 
 - Picking up from where I left off - rebooting file to do the Angular bits first!
 - Here we go :) 
@@ -221,8 +221,8 @@ This is the easiest way to run and develop your app locally.
 Solution that you can try:
 
 - for point 1, change the names and make them unique ✅
-- for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔
-- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC.
+- for point 2, make sure all imports are intended as per your use case for a module, do check for inter-dependency between modules 🤔 👀
+- for point 3, rare but happens if browser doesn't have enough memory to process, so try to restart your code editor, browser or your PC. 
 
 - Reading this article on component interdependence: https://lukeliutingchun.medium.com/angular-using-component-injection-to-communicate-between-parent-and-dynamic-child-components-99c1c297aa43
 
@@ -233,4 +233,74 @@ Solution that you can try:
 ### PM
 
 - Watching a tutorial on NgTemplateOutlet - will see if this helps 😂
-- 
+- Created a 'dev' branch to help me out if I need to reset/tweak further down the line (probably should have done this earlier...)
+- Making 'Pokemon-list' component, then will go back to NgTemplateOutlet guidelines. 
+- Same ERROR as before: 'RangeError: Maximum call stack size exceeded' (main.ts: 6 and 7) I will investigate these - see if anything can be done there...
+- Oh yeah - that's just the general catch-all for if something goes wrong. How do I find out more specific info?
+- ERROR message has gone and been replaced by '[webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.' in the console. What does this mean? 🤔 Will look it up. Stack Overflow: "I'm not much understand how it works, I remove publicPath in webpack.config.js". Ok - will give this a go. Nope - too tricky! Will keep going with tutorials and see where I can get to.
+- Back to setting up the Pokémon List - this way, I'll have at least a couple of components to try out with NGTemplateOutlet
+- ERROR message has gone and it's compiling successfully, but still not showing the results of the Pokémon API...
+- Still seems to be some sort of disconnect between the index.html and the app... will investigate.
+- Will try approach 3 and turn everything off and back on again 😂
+- Approach 3 did not work.
+- Back to approach 2: trying to understand module interdependence 
+- Going to check what original Angular app component was called to check I've not changed it to something odd
+- Ohh - it's called 'app-root'. I'm going to change all instances of 'app-component' to 'app-root' and see if that helps. It's still not displaying on the Live Server, but at least I know it has the right name now - will remember this for future use.
+- Watching a video about error handling in Angular - hopefully some similar errors to those I've come across will come up
+- 🤔 What's a 'standalone component'? (Just out of interest!)
+- Stack Overflow. Following advice, it says "url": "http://localhost:9876/debug.html" in the launch.json - do I need to change this to localhost:4200? Hmm... going to try `ng test` in terminal. Ooh! Lots more information!
+- Reading through more detailed info... 
+
+Here are the 3 faults in more detail:
+
+    1. Data Service = NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    2. Pokemon List Component = NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    3. Unexpected ng closing tag = Error: Errors during JIT compilation of template for HeaderComponent: Unexpected closing tag "-". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
+<h1>Pokedex App</h1>
+<div>class="pokedex-header"</div>
+[ERROR ->]</->
+</ng-template>"): ng:///HeaderComponent/template.html@6:0, Unexpected closing tag "ng-template". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
+<div>class="pokedex-header"</div>
+</->
+[ERROR ->]</ng-template>"): ng:///HeaderComponent/template.html@7:0
+
+- Let's work through these, one by one.
+
+ERROR 1: Data.service
+
+NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    - What happens if I Google this? 
+    - Stack Overflow forum suggests I add `imports: [HttpClientTestingModule]` to configuration. Have imported `import { HttpClientTestingModule } from '@angular/common/http/testing';` I think it works... 
+    - Going to run `ng test` in terminal again
+    - YAY! ERROR 1 has gone! 🎉🎉🎉 '1 SUCCESS'! 🎉🎉🎉 
+
+ERROR 2: Pokemon-list.component
+
+NullInjectorError: R3InjectorError(DynamicTestModule)[DataService -> HttpClient -> HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+
+    - Same ERROR as above, so will try same approach.
+    - IT WORKED!!! YAY! 🎉🎉🎉 '2 SUCCESS'! 🎉🎉🎉 😂
+
+ERROR 3: Unexpected ng closing tag
+
+    - In answering ERROR 1, a bug was detailed in the terminal which I think corresponds to ERROR 3. It's fixed! I just tidied up the `<>s`, moved a class to inside a div and deleted a `-`. (🎉🎉🎉)
+
+
+Now, it's failing in a new way. Let's investigate. 
+
+ERROR 4: Header Component
+
+TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
+
+    - Let's Google this error.
+    - I've added renderTemplate to 'header.component.ts' - not sure whether to add 'OnInit' and 'AfterInit', too... 
+    - But is compiled successfully and it says the test is a SUCCESS! 🎉🎉🎉
+
+- Will save for today and come back to tomorrow. 
