@@ -1,38 +1,68 @@
-<div class="main ">
-  <div class="card m-4 ">
-    <div class="images">
+<div class="main d-flex flex-column align-items-center mw-50">
+  <div class="card m-4 border border-dark rounded-bottom p-2" style="background-color: #f3d74c; box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;">
+    <div
+      class="images w-100 border border-dark rounded-top"
+      [style.background]="getCardColour(pokemonData)"
+    >
       <img
         *ngFor="let sprite of defaultSprites"
         [src]="sprite[1]"
-        alt="sprite[1]"
-        class="w-50"
+        [alt]="sprite[0]"
+        class="w-50 sprite"
       />
     </div>
-    <div class="data" [style.background-color]="getCardColour(pokemonData)" >
-      <h1>
+    <div class="border border-dark rounded-bottom bg-warning p-2">
+      <h1 style="background-color: #f3d74c" class="p-2 border border-dark">
         {{ pokemonName | titlecase }}
       </h1>
-      <p>Weight: {{ pokemonData.weight | convertWeight }}</p>
-      <p>Height: {{ pokemonData.height | convertHeight }}</p>
-      <div class="abilities" *ngFor="let stat of pokemonData.stats">
-        <p>{{ stat["stat"]["name"] | titlecase }}:</p>
-        <p>{{ stat["base_stat"] }}</p>
-      </div>
-
-      <div class="abilities">
-        <p>Abilities:</p>
-        <p
-          *ngFor="let ability of pokemonData.abilities"
-          class="px-1 rounded"
-          style="background-color: #f3d74c"
+      <div class="p-3 border border-dark" style="background-color: #fff1ad">
+        <p>Weight: {{ pokemonData.weight | convertWeight }}</p>
+        <p>Height: {{ pokemonData.height | convertHeight }}</p>
+        <div
+          class="abilities d-flex flex-wrap"
+          *ngFor="let stat of pokemonData.stats"
         >
-          {{ ability["ability"]["name"] | titlecase }}
+          <p>{{ stat["stat"]["name"] | titlecase }}:</p>
+          <p>{{ stat["base_stat"] }}</p>
+        </div>
+
+        <div class="abilities d-flex flex-wrap align-items-center">
+          <p>Abilities:</p>
+          <div class="d-flex align-items-center">
+            <p
+              *ngFor="let ability of pokemonData.abilities"
+              class="px-1 rounded text-center border m-1 border-dark"
+              style="background-color: #f3d74c"
+            >
+              {{ ability["ability"]["name"] | titlecase }}
+            </p>
+          </div>
+        </div>
+        <p class="d-flex flex-wrap">
+          Catch 'em:
+          {{
+            (location.method ? location.method : "No info,")
+              | titlecase
+              | removeHyphens
+          }}
+          in
+          {{
+            (location.name !== "" ? location.name : "this case, sorry!")
+              | removeHyphens
+              | titlecase
+          }}
         </p>
       </div>
-      <p>Catch 'em: {{(location.method ? location.method + " in" : "No info,") | titlecase}} {{(location.name !== "" ? location.name : "sorry!") | removeHyphens | titlecase }} </p>
     </div>
   </div>
-  <div class="m-5 pb-5">
-  <a routerLink="../../pokemon" class="btn"> Go back</a>
-</div>
+  <div class="pb-5 mb-5 back">
+    <a routerLink="../../pokemon" class="btn">
+      <img
+        src="../../assets/left-arrow.png"
+        alt="back arrow"
+        style="width: 40px"
+      />
+      Back to Poképedia
+    </a>
+  </div>
 </div>

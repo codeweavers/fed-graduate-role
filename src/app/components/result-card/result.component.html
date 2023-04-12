@@ -1,17 +1,29 @@
-
-<a routerLink="../pokemon/{{pokemon.name}}"class="btn card-body p-0 w-100 " >
-  <div class=" ">
-    <div class="d-flex align-items-center ">
-      <img src="../../../assets/pokeball-icon.png" alt="pokeball icon" style="max-width: 20px; max-height: 20px" >
-    <p >
-      {{pokemon.species.name | titlecase}}
-    </p>
-  </div>
-    <img [src]="pokemon.sprites.front_default" alt="pokemon"class="card-img-top mw-100 outline"/>
-  
-    <div class="types d-flex">
-      <p *ngFor="let type of types" class="p-1 rounded m-1" [style.background-color]="type.colour">{{type.name | uppercase}} </p>
+<a routerLink="../pokemon/{{ pokemon.name }}" class="btn card-body p-0  w-100">
+  <div class="bg-primary mb-2">
+    <div class="d-flex align-items-center my-2 p-1 bg-white">
+      <img
+        src="../../../assets/pokeball-icon.png"
+        alt="pokeball icon"
+        style="max-width: 20px; max-height: 20px"
+      />
+      <p class="m-0 px-2">
+        {{ pokemon.species.name | titlecase }}
+      </p>
     </div>
+    <img
+      [src]="pokemon.sprites.front_default"
+      alt="pokemon"
+      class="card-img-top mw-100 pokemonImg"
+    />
 
+    <div class="types d-flex">
+      <p
+        *ngFor="let type of types"
+        class="p-1 rounded m-1"
+        [style.background-color]="type.colour"
+      >
+        {{ type.name | uppercase }}
+      </p>
+    </div>
   </div>
 </a>

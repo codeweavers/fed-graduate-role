@@ -24,13 +24,19 @@ export class ResultDetailComponent implements OnInit {
     private _Activatedroute: ActivatedRoute
   ) {}
 
-  // Get available sprites with 'default' view
+  // Get available sprites for 'default' form
   getAvailableSprites(sprites: object) {
+    
     let spritesArray = Object.entries(sprites);
+    console.log("SPRITES:", spritesArray)
+    if(spritesArray.length){
     this.defaultSprites = spritesArray.filter((sprite) =>
       sprite[0].includes('default')
-    );
+    ).reverse();
+  } else {
+    this.defaultSprites = {name: "No image found", url: "../../assets/no-photos.png"}
   }
+}
 
   getCardColour(pokemon: PokemonType): string {
     return this.pokemonService.getTypeColour(pokemon.types[0].type.name);
@@ -45,13 +51,15 @@ export class ResultDetailComponent implements OnInit {
         this.getAvailableSprites(pokemon.sprites);
         this.pokemonData = pokemon;
 
-        // Get encounter location
+        // Adds one encounter location to location object
         this.pokemonService
           .getEncounters(pokemon.location_area_encounters)
           .subscribe((result) => {
             if (result.length > 0) {
               this.location.name = result[0].location_area.name;
               console.log('LOC:', result);
+
+              // Adds one encounter method to location object
               this.pokemonService
                 .getEncounterMethod(result[0].location_area.url)
                 .subscribe((result) =>this.location.method= result.encounter_method_rates[0].encounter_method.name);
