@@ -1,12 +1,12 @@
 <a routerLink="../pokemon/{{ pokemon.name }}" class="btn card-body p-0  w-100">
-  <div class=" mb-2" [style.background-color]=" types[0].colour" >
-    <div class="d-flex align-items-center my-2 p-1 bg-white">
+  <div class="mb-2" [style.background-color]=" types[0].colour" >
+    <div class="d-flex align-items-center my-2 p-2"  style="background-color: #f7f0cc;">
       <img
         src="../../../assets/pokeball-icon.png"
         alt="pokeball icon"
         style="max-width: 20px; max-height: 20px"
       />
-      <p class="m-0 px-2">
+      <p class="m-0 px-2 font-weight-bold">
         {{ pokemon.species.name | titlecase }}
       </p>
     </div>
@@ -16,7 +16,7 @@
       class="card-img-top mw-100 pokemonImg"
     />
 
-    <div class="types d-flex">
+    <div class="types d-flex p-2" style="background-color: #f7f0cc;">
       <p
         *ngFor="let type of types"
         class="p-1 rounded m-1"
