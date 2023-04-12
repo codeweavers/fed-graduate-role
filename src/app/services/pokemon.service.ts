@@ -70,7 +70,6 @@ export class PokemonService {
     }
   }
 
-
   // Get encounters
   getEncounters(url: string): Observable<any>{
     let encountersObj= this.http.get(url);
