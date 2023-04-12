@@ -202,6 +202,8 @@ This is the easiest way to run and develop your app locally.
 
 ## Process (11/4/23) 
 
+### AM
+
 - Picking up from where I left off - rebooting file to do the Angular bits first!
 - Here we go :) 
 - Angular already installed. Installed Node.
@@ -304,3 +306,10 @@ TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
     - But is compiled successfully and it says the test is a SUCCESS! 🎉🎉🎉
 
 - Will save for today and come back to tomorrow. 
+
+## Process (12/4/23) 
+
+### PM
+
+- Basking in the glow of my success yesterday (😂), I will now attempt to pick up where I left off.
+- Am thinking that perhaps the best place to start is by watching this Error Handling in Angular video to see if I can work out why it isn't connecting.
