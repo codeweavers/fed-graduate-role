@@ -2,52 +2,19 @@ p{
   margin: 0px;
 }
 
-.abilities {
-  display: flex;
-  gap: 5px;
-  flex: flex-wrap;
+.sprite{
+  filter: drop-shadow(10px 10px 4px #121242);     
+  transition: transform .2s;
 }
 
-.data {
-  background-color: rgb(255, 250, 243);
-  width: 100%;
-  padding: 10px;
-  border: 2px solid black;
-  border-top: none;
+.sprite:hover{
+  transform: scale(1.4); 
 }
 
-.card {
-  background-color: #f3d74c;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;
+a{
+  transition: transform .2s;
+  
 }
-
-.images {
-  background-image: url('./sky.jpg');
-  border: 2px solid black;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-img-top {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-.card:hover .img-top {
-  display: inline;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+a:hover{
+  transform: scale(1.2); 
 }

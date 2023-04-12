@@ -2,7 +2,7 @@
   <app-search-bar (searchEvent)="getSearchedPokemon($event)"></app-search-bar>
   <div class="row  justify-content-center">
     <app-result
-      class="col-6 col-sm-6 col-lg-3 col-xl-2 m-2 card"
+      class="col-6 col-sm-6 col-lg-3 col-xl-2 m-2 card bg-yellow bg-opacity-80"
       *ngFor="let pokemon of pokemonSet"
       [pokemon]="pokemon"
     ></app-result>
