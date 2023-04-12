@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { PokemonDirectoryComponent } from './pokemon-directory/pokemon-directory.component';
 
-const routes: Routes = [{ path: 'hello', component: HelloWorldComponent }];
+const routes: Routes = [
+  {
+    path: 'pokemon-directory',
+    component: PokemonDirectoryComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Pokemon Directory</h1>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let pokemon of pokemonList">
+      <a [routerLink]="['/pokemon', pokemon.name]">{{ pokemon.name }}</a>
+    </li>
+  </ul>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{ disabled: currentPage === 1 }">
+        <a
+          class="page-link"
+          [routerLink]="['/pokemon-directory']"
+          [queryParams]="{ page: currentPage - 1 }"
+        >
+          Previous
+        </a>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let page of pagesArray"
+        [ngClass]="{ active: page === currentPage }"
+      >
+        <a
+          class="page-link"
+          [routerLink]="['/pokemon-directory']"
+          [queryParams]="{ page: page }"
+          >{{ page }}</a
+        >
+      </li>
+      <li
+        class="page-item"
+        [ngClass]="{ disabled: currentPage === totalPages }"
+      >
+        <a
+          class="page-link"
+          [routerLink]="['/pokemon-directory']"
+          [queryParams]="{ page: currentPage + 1 }"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
