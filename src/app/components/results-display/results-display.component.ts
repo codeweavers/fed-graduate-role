@@ -69,10 +69,6 @@ previousNavState: boolean;
     console.log("PAGE:", this.page);
     this.previousNavState = this.page>1; 
     this.nextNavState = this.page<26;
-    console.log("NEXT:", this.nextNavState, "PREV:", this.previousNavState)
   }
 
-  // checkResult(result: any) {
-  //   return result.length > 0 ? true : false;
-  // }
 }
