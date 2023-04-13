@@ -202,6 +202,8 @@ This is the easiest way to run and develop your app locally.
 
 ## Process (11/4/23) 
 
+### AM
+
 - Picking up from where I left off - rebooting file to do the Angular bits first!
 - Here we go :) 
 - Angular already installed. Installed Node.
@@ -304,3 +306,150 @@ TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
     - But is compiled successfully and it says the test is a SUCCESS! 🎉🎉🎉
 
 - Will save for today and come back to tomorrow. 
+
+## Process (12/4/23) 
+
+### PM
+
+- Basking in the glow of my success yesterday (😂), I will now attempt to pick up where I left off.
+- Am thinking that perhaps the best place to start is by watching this Error Handling in Angular video to see if I can work out why it isn't connecting: https://www.youtube.com/watch?v=e03EHZIVJtM
+
+## Process (13/4/23) 
+
+### AM
+
+- Going to start with the headline problem, as otherwise I won't be able to see what I'm doing.
+- Have looked on Stack Overflow and it looks like I can see errors in more detail by typing F12 in my browser (Developer Tools) - will give this a go
+- Ok, couldn't get F12 to work, but did see that I needed to add `<app-root></app-root>` to the index.html file, so that's good.
+- Screen is still blank so will keep investigating. it says 'Listening on port 5500', but this is differrent to port 4200 that I've been using earlier. 
+- Only thing in the console is: 'Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.' - going to look this up. I've installed Bootstrap in the package.json (think I may have deleted this earlier...)
+- At the moment, I'm going through my code line-by-line to see if there are any bits I've deleted/left out from the original code I pulled from CodeWeavers.
+- Ok, I've created a settings.json file in the .vscode file to try to change the Live Server settings so it goes live on port 4200.
+- I've also just seen this new ERROR message in the console of localhost:4200 page: 'Angular is running in development mode. Call enableProdMode() to enable production mode.' I don't think I want to deploy yet...
+- Going back to the Angular docs to check I've set everything up correctly. 
+- Ooh new ERRORS! OK - let's set them out 1 by 1:
+
+ERROR 1: 'Failed to load resource: the server responded with a status of 404 (Not Found)' http://localhost:4200/app/header/
+
+ERROR 2: 'Refused to execute http://localhost:4200/app/header/ as script because "X-Content-Type-Options: nosniff" was given and its Content-Type is not a script MIME type.'
+
+ERROR 3: 'Error: The selector "app-root" did not match any elements'
+
+ERROR 4: 'Error: The selector "app-root" did not match any elements'
+
+INFORMATION POINT: '[webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.'
+
+So there are a few things to look at. I'll start with ERROR 1.
+
+1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) I can open it in a new browser tab by adding `ng serve --port 5500 --open`
+
+ - It still has the ERROR 404 (Not Found) - so, now I know it's listening on the right port, maybe there's something wrong with how I'm pointing to the styles.scss and main.ts files?
+ - Have just double-checked json settings to make sure any instances of port 4200 have been changed to port 5500
+ - I deleted the styles and main links from the HTML and all the ERRORS disappeared. Still not showing anything on the page, though. Will keep reading Angular docs and looking at their example.
+ 
+- VERY EXCITED: I just got 'Understanding Angular' to appear on my Live Server screen (yay!)
+- I put that in the 'app.component.html' file, so perhaps I need to focus there?
+- If I go to each of the html files of header, app and index and paste them into the URL bar, they all appear as expected. Is it becuase I'm not linking them with something like React that they're not showing up?
+- Am looking up examples of React used with Angular and Bootstrap. Have found a couple of repos I think could be helpful.
+
+### PM
+
+- I've tried looking at examples on GitHub and seeing if there's a different way to do this. Have run into some ERRORS, which I will try to fix (maybe I could use ng test?) Might make the errors a bit clearer 
+- ERROR now reads: 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
+
+See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-iv6g5B/angular-errors.log" for further details.'
+- I've looked on GitHub and seen that I may need to update the global CLI (using `npm i @angular/cli -g)
+- I now get a new ERROR: Ms-MacBook-Pro:fed-graduate-role marthabennett$ npm i @angular/cli -g
+npm ERR! code EACCES
+npm ERR! syscall rename
+npm ERR! path /usr/local/lib/node_modules/@angular/cli
+npm ERR! dest /usr/local/lib/node_modules/@angular/.cli-G39XYeT9
+npm ERR! errno -13
+npm ERR! Error: EACCES: permission denied, rename '/usr/local/lib/node_modules/@angular/cli' -> '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'
+npm ERR!  [Error: EACCES: permission denied, rename '/usr/local/lib/node_modules/@angular/cli' -> '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'] {
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'rename',
+npm ERR!   path: '/usr/local/lib/node_modules/@angular/cli',
+npm ERR!   dest: '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'
+npm ERR! }
+npm ERR! 
+npm ERR! The operation was rejected by your operating system.
+npm ERR! It is likely you do not have the permissions to access this file as the current user
+npm ERR! 
+npm ERR! If you believe this might be a permissions issue, please double-check the
+npm ERR! permissions of the file and its containing directories, or try running
+npm ERR! the command again as root/Administrator.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/marthabennett/.npm/_logs/2023-04-13T15_38_34_301Z-debug-0.log
+
+- Some possible causes/things to try: https://www.reddit.com/r/node/comments/7bldtn/npm_err_please_try_running_this_command_again_as/
+
+1. Another process may be locking the file
+2. Powershell as admin
+3. Git Bash (my normal shell I always use)
+4. npm cache clean
+5. npm cache clean --force
+6. npm cache verify
+7. Uninstalling node and re installing
+8. Changing permission settings on AppData/Roaming/npm
+9. Deleting files in AppData/Roaming/npm/nodemodules
+10. I may not be running as an admin (this happened earlier in the week I think?) - will look up how to do this. 
+
+- Looking at option 10, I've researched how to run VSCode as an admin, but right-clicking on the terminal isn't providing me with an option to do this. Looking in greater detail on Stack Overflow, someone has commented saying 'this only works if you close all instances of VSCode before'. What does this mean? Will Google. 
+- It doesn't say anything about administrator prompts, it just says its installed it (something to do with Docker, perhaps?)
+- I will try the approach I used earlier (`sudo npm install -g @angular/cli`)
+- This seems to have worked (tiny party! 🎉)
+- Now, I will run `ng serve --port 5500 --open` and `ng test` again
+- That didn't work. ERROR: 'This command is not available when running the Angular CLI outside a workspace.' Maybe I'm in the wrong file/at the wrong level?
+- Will try in 'fed-graduate-role' file. 
+- Ok, it's listening on Port 5500, a few ERRORS, same as before. I will now try to run `ng test`, now that I hopefully have permission...
+- Ohhhh - same ERROR as before. 👀
+- 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
+
+See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-Y8YnJP/angular-errors.log" for further details.'
+- Going to look up just the first bit of the ERROR, break it down
+- Stack Overflow says this: 'TypeScript expects there to be at least one TypeScript file in the folder in order to compile.
+
+To fix the error, add an empty typescript file to the typescript scripts folder (the location of your tsconfig file).'
+- Will try this!
+- Ok, I've added an 'empty.ts' file to the same level as the tsconfig.json - let's see if this works!
+- It still won't run 'ng test' 
+- So, back to trying 'ng serve --port 5500 --open`
+- Going to go through ERRORS as I can see them in the terminal:
+
+ERROR 1: Error: src/app/app.module.ts:21:5 - error NG6002: This import contains errors, which may affect components that depend on this NgModule.
+
+21     PagesModule,
+ERROR 2: Error: src/app/components/components.module.ts:13:5 - error NG6001: The class 'PokemonFormComponent' is listed in the declarations of the NgModule 'ComponentsModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+
+13     PokemonFormComponent,
+       ~~~~~~~~~~~~~~~~~~~~
+       src/app/components/pokemon-form/pokemon-form.component.ts:8:14
+    8 export class PokemonFormComponent implements OnInit {
+                   ~~~~~~~~~~~~~~~~~~~~
+    'PokemonFormComponent' is declared here.
+
+ERROR 3: Error: src/app/components/components.module.ts:19:5 - error NG6003: 'PokemonFormComponent' does not appear to be an NgModule, Component, Directive, or Pipe class.
+
+19     PokemonFormComponent,
+       ~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/pokemon-form/pokemon-form.component.ts:8:14
+    8 export class PokemonFormComponent implements OnInit {
+                   ~~~~~~~~~~~~~~~~~~~~
+ Is it missing an Angular annotation?
+
+ERROR 4: Error: src/app/components/pokemon-form/pokemon-form.component.ts:5:16 - error NG2008: Could not find template file './pokemon-form.component.html'.
+
+5   templateUrl: './pokemon-form.component.html',
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ERROR 5: Error: src/app/pages/pages.modules.ts:26:5 - error NG6002: This import contains errors, which may affect components that depend on this NgModule.
+
+26     ComponentsModule,
+
+Ok José. Going for a cup of tea, then going to work through ERRORS one by one.
+
+

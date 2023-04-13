@@ -1,0 +1,70 @@
+.pokemon {
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #000;
+    width: 250px;
+    max-width: 250px;
+  }
+  
+  .pokemon .img-container {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .pokemon .img-container img {
+    margin-top: 20px;
+    max-width: 90%;
+  }
+  
+  .pokemon .info {
+    margin-top: 20px;
+  }
+  
+  .pokemon .number {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+  
+  .pokemon .name {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+  }
+  
+  .pokemon .type {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+  }
+  
+  
+  /* BUTTONS */
+  .btn-warning {
+    color: #000;
+    background-color: #f8c77c;
+    border-color: #f8c77c;
+  }
+  
+  .btn-warning:hover {
+    color: #000;
+    background-color: #dfb36f;
+    border-color: #dfb36f;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #fe7e6f;
+    border-color: #fe7e6f;
+  }
+  
+  .btn-danger:hover {
+    color: #fff;
+    background-color: #e47163;
+    border-color: #e47163;
+  }
