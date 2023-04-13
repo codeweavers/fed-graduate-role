@@ -403,8 +403,53 @@ npm ERR!     /Users/marthabennett/.npm/_logs/2023-04-13T15_38_34_301Z-debug-0.lo
 - This seems to have worked (tiny party! 🎉)
 - Now, I will run `ng serve --port 5500 --open` and `ng test` again
 - That didn't work. ERROR: 'This command is not available when running the Angular CLI outside a workspace.' Maybe I'm in the wrong file/at the wrong level?
-- Will try in 'fed-graduate-role' file. 👀
+- Will try in 'fed-graduate-role' file. 
 - Ok, it's listening on Port 5500, a few ERRORS, same as before. I will now try to run `ng test`, now that I hopefully have permission...
-- Ohhhh - same ERROR as before. 
+- Ohhhh - same ERROR as before. 👀
+- 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
+
+See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-Y8YnJP/angular-errors.log" for further details.'
+- Going to look up just the first bit of the ERROR, break it down
+- Stack Overflow says this: 'TypeScript expects there to be at least one TypeScript file in the folder in order to compile.
+
+To fix the error, add an empty typescript file to the typescript scripts folder (the location of your tsconfig file).'
+- Will try this!
+- Ok, I've added an 'empty.ts' file to the same level as the tsconfig.json - let's see if this works!
+- It still won't run 'ng test' 
+- So, back to trying 'ng serve --port 5500 --open`
+- Going to go through ERRORS as I can see them in the terminal:
+
+ERROR 1: Error: src/app/app.module.ts:21:5 - error NG6002: This import contains errors, which may affect components that depend on this NgModule.
+
+21     PagesModule,
+ERROR 2: Error: src/app/components/components.module.ts:13:5 - error NG6001: The class 'PokemonFormComponent' is listed in the declarations of the NgModule 'ComponentsModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+
+13     PokemonFormComponent,
+       ~~~~~~~~~~~~~~~~~~~~
+       src/app/components/pokemon-form/pokemon-form.component.ts:8:14
+    8 export class PokemonFormComponent implements OnInit {
+                   ~~~~~~~~~~~~~~~~~~~~
+    'PokemonFormComponent' is declared here.
+
+ERROR 3: Error: src/app/components/components.module.ts:19:5 - error NG6003: 'PokemonFormComponent' does not appear to be an NgModule, Component, Directive, or Pipe class.
+
+19     PokemonFormComponent,
+       ~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/pokemon-form/pokemon-form.component.ts:8:14
+    8 export class PokemonFormComponent implements OnInit {
+                   ~~~~~~~~~~~~~~~~~~~~
+ Is it missing an Angular annotation?
+
+ERROR 4: Error: src/app/components/pokemon-form/pokemon-form.component.ts:5:16 - error NG2008: Could not find template file './pokemon-form.component.html'.
+
+5   templateUrl: './pokemon-form.component.html',
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ERROR 5: Error: src/app/pages/pages.modules.ts:26:5 - error NG6002: This import contains errors, which may affect components that depend on this NgModule.
+
+26     ComponentsModule,
+
+Ok José. Going for a cup of tea, then going to work through ERRORS one by one.
 
 
