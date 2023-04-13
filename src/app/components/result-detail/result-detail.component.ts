@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonType } from 'PokemonType';
+import { Router } from '@angular/router';
 
 interface Location {
   name: string;
@@ -24,7 +25,8 @@ export class ResultDetailComponent implements OnInit {
   location: Location = { name: '', method: '' };
   constructor(
     private pokemonService: PokemonService,
-    private _Activatedroute: ActivatedRoute
+    private _Activatedroute: ActivatedRoute,
+    private router: Router
   ) {}
 
   // Check if default sprite URLs are available, and if so assign them to sprites object. If not, set a 'no image found' icon to show instead. 
@@ -38,8 +40,6 @@ export class ResultDetailComponent implements OnInit {
     } else {
       this.defaultSprites = {
         available: false,
-        // front_default: '',
-        // back_default: '',
       };
     }
   }
@@ -79,6 +79,8 @@ export class ResultDetailComponent implements OnInit {
               console.log('no encounters');
             }
           });
+      },(error)=>{
+        this.router.navigate(['/404'])
       });
   }
 }

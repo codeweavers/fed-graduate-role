@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'pokemon/:name',
     component: ResultDetailComponent,
   },
+  {
+    path: '404',
+    component: PageNotFoundComponent,
+  },
  
 ];
 
