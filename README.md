@@ -319,7 +319,7 @@ TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
 ### AM
 
 - Going to start with the headline problem, as otherwise I won't be able to see what I'm doing.
-- Have looked on Stack Overflow and it looks like I can see errors in more detail by typing F12 in my browser (Developer Tools) - will give this a go :)
+- Have looked on Stack Overflow and it looks like I can see errors in more detail by typing F12 in my browser (Developer Tools) - will give this a go
 - Ok, couldn't get F12 to work, but did see that I needed to add `<app-root></app-root>` to the index.html file, so that's good.
 - Screen is still blank so will keep investigating. it says 'Listening on port 5500', but this is differrent to port 4200 that I've been using earlier. 
 - Only thing in the console is: 'Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.' - going to look this up. I've installed Bootstrap in the package.json (think I may have deleted this earlier...)
@@ -350,7 +350,7 @@ So there are a few things to look at. I'll start with ERROR 1.
 - VERY EXCITED: I just got 'Understanding Angular' to appear on my Live Server screen (yay!)
 - I put that in the 'app.component.html' file, so perhaps I need to focus there?
 - If I go to each of the html files of header, app and index and paste them into the URL bar, they all appear as expected. Is it becuase I'm not linking them with something like React that they're not showing up?
-- Am looking up examples of React used with Angular and Bootstrap. Have found a couple of repos I htink could be helpful :) 
+- Am looking up examples of React used with Angular and Bootstrap. Have found a couple of repos I think could be helpful.
 
 ### PM
 
@@ -395,6 +395,16 @@ npm ERR!     /Users/marthabennett/.npm/_logs/2023-04-13T15_38_34_301Z-debug-0.lo
 7. Uninstalling node and re installing
 8. Changing permission settings on AppData/Roaming/npm
 9. Deleting files in AppData/Roaming/npm/nodemodules
-10. I may not be running as an admin (this happened earlier in the week I think?) - will look up how to do this. 👀
+10. I may not be running as an admin (this happened earlier in the week I think?) - will look up how to do this. 
+
+- Looking at option 10, I've researched how to run VSCode as an admin, but right-clicking on the terminal isn't providing me with an option to do this. Looking in greater detail on Stack Overflow, someone has commented saying 'this only works if you close all instances of VSCode before'. What does this mean? Will Google. 
+- It doesn't say anything about administrator prompts, it just says its installed it (something to do with Docker, perhaps?)
+- I will try the approach I used earlier (`sudo npm install -g @angular/cli`)
+- This seems to have worked (tiny party! 🎉)
+- Now, I will run `ng serve --port 5500 --open` and `ng test` again
+- That didn't work. ERROR: 'This command is not available when running the Angular CLI outside a workspace.' Maybe I'm in the wrong file/at the wrong level?
+- Will try in 'fed-graduate-role' file. 👀
+- Ok, it's listening on Port 5500, a few ERRORS, same as before. I will now try to run `ng test`, now that I hopefully have permission...
+- Ohhhh - same ERROR as before. 
 
 
