@@ -320,4 +320,25 @@ TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
 
 - Going to start with the headline problem, as otherwise I won't be able to see what I'm doing.
 - Have looked on Stack Overflow and it looks like I can see errors in more detail by typing F12 in my browser (Developer Tools) - will give this a go :)
-- 
+- Ok, couldn't get F12 to work, but did see that I needed to add `<app-root></app-root>` to the index.html file, so that's good.
+- Screen is still blank so will keep investigating. it says 'Listening on port 5500', but this is differrent to port 4200 that I've been using earlier. 
+- Only thing in the console is: 'Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.' - going to look this up. I've installed Bootstrap in the package.json (think I may have deleted this earlier...)
+- At the moment, I'm going through my code line-by-line to see if there are any bits I've deleted/left out from the original code I pulled from CodeWeavers.
+- Ok, I've created a settings.json file in the .vscode file to try to change the Live Server settings so it goes live on port 4200.
+- I've also just seen this new ERROR message in the console of localhost:4200 page: 'Angular is running in development mode. Call enableProdMode() to enable production mode.' I don't think I want to deploy yet...
+- Going back to the Angular docs to check I've set everything up correctly. 
+- Ooh new ERRORS! OK - let's set them out 1 by 1:
+
+ERROR 1: 'Failed to load resource: the server responded with a status of 404 (Not Found)' http://localhost:4200/app/header/
+
+ERROR 2: 'Refused to execute http://localhost:4200/app/header/ as script because "X-Content-Type-Options: nosniff" was given and its Content-Type is not a script MIME type.'
+
+ERROR 3: 'Error: The selector "app-root" did not match any elements'
+
+ERROR 4: 'Error: The selector "app-root" did not match any elements'
+
+INFORMATION POINT: '[webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled.'
+
+So there are a few things to look at. I'll start with ERROR 1.
+
+1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) 👀
