@@ -312,4 +312,12 @@ TypeError: Cannot read properties of undefined (reading 'createEmbeddedView')
 ### PM
 
 - Basking in the glow of my success yesterday (😂), I will now attempt to pick up where I left off.
-- Am thinking that perhaps the best place to start is by watching this Error Handling in Angular video to see if I can work out why it isn't connecting.
+- Am thinking that perhaps the best place to start is by watching this Error Handling in Angular video to see if I can work out why it isn't connecting: https://www.youtube.com/watch?v=e03EHZIVJtM
+
+## Process (13/4/23) 
+
+### AM
+
+- Going to start with the headline problem, as otherwise I won't be able to see what I'm doing.
+- Have looked on Stack Overflow and it looks like I can see errors in more detail by typing F12 in my browser (Developer Tools) - will give this a go :)
+- 
