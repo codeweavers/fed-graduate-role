@@ -1,17 +1,34 @@
-<div class="main d-flex flex-column align-items-center mw-50">
-  <div class="card m-4 border border-dark rounded-bottom p-2" style="background-color: #f3d74c; box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;">
+<div class="main d-flex flex-column align-items-center ">
+  <div
+    class="card m-4 border border-dark rounded-bottom p-2"
+    style="
+      background-color: #f3d74c;
+      box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;
+    "
+  >
     <div
-      class="images w-100 border border-dark rounded-top"
+      class="images border border-dark rounded-top"
       [style.background]="getCardColour(pokemonData)"
     >
-      <!-- <img
-        *ngFor="let sprite of defaultSprites"
-        [src]="sprite[1]"
-        [alt]="sprite[0]"
-        class="w-50 mw-75 sprite"
-      /> -->
-      <img [src]="defaultSprites.front_default" alt="Default front view" class="w-50 mw-75 sprite">
-      <img [src]="defaultSprites.back_default" alt="Default back view" class="w-50 mw-75 sprite">
+      <div *ngIf="this.defaultSprites.available">
+        <img
+          [src]="defaultSprites.front_default"
+          alt="Default front view"
+          class="w-50  sprite"
+        />
+        <img
+          [src]="defaultSprites.back_default"
+          alt="Default back view"
+          class="w-50 sprite"
+        />
+      </div>
+      <div
+        *ngIf="!this.defaultSprites.available"
+        class="d-flex justify-content-center py-2"
+      >
+        <img src="../../assets/no-photos.png" class="w-25" />
+      </div>
+      <!-- delphox -->
     </div>
     <div class="border border-dark rounded-bottom bg-warning p-2">
       <h1 style="background-color: #f3d74c" class="p-2 border border-dark">
@@ -24,7 +41,7 @@
           class="abilities d-flex flex-wrap"
           *ngFor="let stat of pokemonData.stats"
         >
-          <p>{{ stat["stat"]["name"] | titlecase }}:</p>
+          <p>{{ stat["stat"]["name"] | titlecase| removeHyphens }}:</p>
           <p>{{ stat["base_stat"] }}</p>
         </div>
 
@@ -58,7 +75,7 @@
     </div>
   </div>
   <div class="pb-5 mb-5 back">
-    <a routerLink="../../pokemon" class="btn">
+    <a routerLink="../../pokemon" [queryParams]="{ page: 1 }" class="btn">
       <img
         src="../../assets/left-arrow.png"
         alt="back arrow"

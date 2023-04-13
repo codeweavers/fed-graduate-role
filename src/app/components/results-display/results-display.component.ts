@@ -13,11 +13,12 @@ export class ResultsDisplayComponent implements OnInit {
   page: number = 0;
   totalPokemon: number;
   pokemonSet: any = [];
-
+nextNavState : boolean;
+previousNavState: boolean;
   constructor(
     private pokemonService: PokemonService,
     private _Activatedroute: ActivatedRoute,
-    private router: Router
+    // private router: Router
   ) {}
 
   // Get pokemon on component load (converting string from params into number so it can be used to calculate offset)
@@ -27,6 +28,7 @@ export class ResultsDisplayComponent implements OnInit {
       this.page = Number(pageString);
       this.getPokemon();
     });
+   
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
@@ -45,7 +47,7 @@ export class ResultsDisplayComponent implements OnInit {
     let res: any = [];
     this.pokemonService.getSpecificPokemon(searchTerm).subscribe((response) => {
       res.push(response);
-      if (this.checkResult(res)) {
+      if (res.length>0) {
         this.pokemonSet = [];
         this.pokemonSet.push(...res);
       }
@@ -64,9 +66,13 @@ export class ResultsDisplayComponent implements OnInit {
           this.pokemonSet.push(uniqueResponse);
         });
     });
+    console.log("PAGE:", this.page);
+    this.previousNavState = this.page>1; 
+    this.nextNavState = this.page<26;
+    console.log("NEXT:", this.nextNavState, "PREV:", this.previousNavState)
   }
 
-  checkResult(result: any) {
-    return result.length > 0 ? true : false;
-  }
+  // checkResult(result: any) {
+  //   return result.length > 0 ? true : false;
+  // }
 }

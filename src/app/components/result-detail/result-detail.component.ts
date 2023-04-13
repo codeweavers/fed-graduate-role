@@ -17,8 +17,9 @@ export class ResultDetailComponent implements OnInit {
   pokemonName: any;
   pokemonData: PokemonType;
   defaultSprites: {
-    front_default: string;
-    back_default: string;
+    available: boolean;
+    front_default?: string;
+    back_default?: string;
   };
   location: Location = { name: '', method: '' };
   constructor(
@@ -30,13 +31,15 @@ export class ResultDetailComponent implements OnInit {
   getAvailableSprites(sprites: any) {
     if (sprites.front_default && sprites.back_default) {
       this.defaultSprites = {
+        available: true,
         front_default: sprites.front_default,
         back_default: sprites.back_default,
       };
     } else {
       this.defaultSprites = {
-        front_default: '../../assets/no-photos.png',
-        back_default: '../../assets/no-photos.png',
+        available: false,
+        // front_default: '',
+        // back_default: '',
       };
     }
   }

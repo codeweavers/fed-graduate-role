@@ -19,6 +19,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { convertHeightPipe } from './pipes/convertHeight';
 import { convertWeightPipe } from './pipes/convertWeight';
 import { removeHyphensPipe } from './pipes/format-location.pipe';
+import { SplashComponent } from './components/splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { removeHyphensPipe } from './pipes/format-location.pipe';
     convertWeightPipe,
     SearchBarComponent,
     removeHyphensPipe,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
