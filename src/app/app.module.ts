@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { HeaderComponent } from '../app/header/header.component';
+import { PokemonListComponent } from '../app/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [

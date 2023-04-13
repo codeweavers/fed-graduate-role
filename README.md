@@ -349,4 +349,5 @@ So there are a few things to look at. I'll start with ERROR 1.
  
 - VERY EXCITED: I just got 'Understanding Angular' to appear on my Live Server screen (yay!)
 - I put that in the 'app.component.html' file, so perhaps I need to focus there?
+- If I go to each of the html files of header, app and index and paste them into the URL bar, they all appear as expected. Is it becuase I'm not linking them with something like React that they're not showing up?
 - 
