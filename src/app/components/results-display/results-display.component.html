@@ -1,22 +1,28 @@
 <div class="container d-flex flex-column pb-10 align-items-center">
   <app-search-bar (searchEvent)="getSearchedPokemon($event)"></app-search-bar>
-  <button  [disabled]="!previousNavState"   class="nav-arrow btn  bg-warning">
-  <a
-    routerLink="../pokemon"
-  
-    [queryParams]="{ page: this.page - 1 }"
-    >PREV</a
-  >
-</button>
-  <button  [disabled]="!nextNavState"     class="nav-arrow btn  bg-warning">
-  <a
- 
-    routerLink="../pokemon"
-    [queryParams]="{ page: this.page + 1 }"
-    style="width: 50px"
-    >NEXT</a
-  >
-</button>
+  <button [disabled]="!previousNavState" class="nav-arrow btn bg-warning">
+    <a
+      routerLink="../pokemon"
+      [queryParams]="{ page: this.page - 1 }"
+      aria-label="Navigate to previous page"
+      ><img
+        src="../../assets/left-arrow.png"
+        class="arrow"
+        alt="navigate to previous page"
+    /></a>
+  </button>
+  <button [disabled]="!nextNavState" class="nav-arrow btn bg-warning">
+    <a
+      routerLink="../pokemon"
+      [queryParams]="{ page: this.page + 1 }"
+      style="width: 50px"
+      aria-label="Navigate to next page"
+      ><img
+        src="../../assets/right-arrow.png"
+        class="arrow"
+        alt="navigate to previous page"
+    /></a>
+  </button>
   <div class="row justify-content-center">
     <app-result
       class="col-6 col-sm-6 col-lg-3 col-xl-2 m-2 card bg-yellow bg-opacity-80"
