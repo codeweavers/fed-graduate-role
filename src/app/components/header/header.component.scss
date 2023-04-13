@@ -3,14 +3,17 @@ header{
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
-    background: linear-gradient(#ffcc3f, rgb(255, 227, 150));
-    // box-shadow: 9px 9px 13px #e8e8e8, -9px -9px 13px #ffffff;
+    background-color: #ffcc3f;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+
 }
+
 a{display: flex; align-items: center;
 }
+
 h1{
-    color: white;
-    text-shadow: -1px -1px 0 #004289, 1px -1px 0 #004289, -1px 1px 0 #004289, 2px 2px 0 #004289;
+    text-shadow: -1px -1px 0 #00172f, 1px -1px 0 #00172f, -1px 1px 0 #00172f, 2px 2px 0 #00172f;
 }
 // TRY shadow effect with this colour #004289
 

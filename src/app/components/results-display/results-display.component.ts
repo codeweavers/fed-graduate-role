@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonType } from 'PokemonType';
 import { PokemonService } from 'src/app/services/pokemon.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-results-display',
@@ -9,17 +9,16 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./results-display.component.scss'],
 })
 export class ResultsDisplayComponent implements OnInit {
-  // pokemon: PokemonType[] = [];
-  page: number = 0;
+  page: number = 1;
   totalPokemon: number;
   pokemonSet: any = [];
-nextNavState : boolean;
-previousNavState: boolean;
+  nextNavState: boolean;
+  previousNavState: boolean;
   constructor(
     private pokemonService: PokemonService,
-    private _Activatedroute: ActivatedRoute,
-    // private router: Router
-  ) {}
+    private _Activatedroute: ActivatedRoute
+  ) 
+  {}
 
   // Get pokemon on component load (converting string from params into number so it can be used to calculate offset)
   ngOnInit(): void {
@@ -28,7 +27,6 @@ previousNavState: boolean;
       this.page = Number(pageString);
       this.getPokemon();
     });
-   
   }
 
   // Get 50 pokemon through from specific offset, and for each one make an individual API call to get unique details.
@@ -42,19 +40,26 @@ previousNavState: boolean;
       });
   }
 
-  // Get specifc searched pokemon result
+  // Get specifc searched pokemon result and set it to display
   getSearchedPokemon(searchTerm: string) {
     let res: any = [];
-    this.pokemonService.getSpecificPokemon(searchTerm).subscribe((response) => {
-      res.push(response);
-      if (res.length>0) {
-        this.pokemonSet = [];
-        this.pokemonSet.push(...res);
+    this.pokemonService.getSpecificPokemon(searchTerm).subscribe(
+      (response) => {
+        res.push(response);
+        if (res.length > 0) {
+          this.pokemonSet = [];
+          this.pokemonSet.push(...res);
+        }
+      },
+      (error) => {
+        console.log('ERROR:', error);
+        if (error.status) {
+          window.alert(
+            `${searchTerm} ${error.error}. We couldn't get it from the pokedex - try checking your spelling?`
+          );
+        }
       }
-    }, error=> {
-      console.log("ERROR:", error);
-      if(error.status){window.alert(`${searchTerm} ${error.error}. We couldn't get it from the pokedex - try checking your spelling?`)};
-    });
+    );
   }
 
   //Uses data (names and URLs) from inital batch call to populate pokemon array with individual data for each pokemon
@@ -66,9 +71,8 @@ previousNavState: boolean;
           this.pokemonSet.push(uniqueResponse);
         });
     });
-    console.log("PAGE:", this.page);
-    this.previousNavState = this.page>1; 
-    this.nextNavState = this.page<26;
+    console.log('PAGE:', this.page);
+    this.previousNavState = this.page > 1;
+    this.nextNavState = this.page < 26;
   }
-
 }

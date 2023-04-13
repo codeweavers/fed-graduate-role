@@ -1,11 +1,11 @@
 .card {
   // background: #f3d74c;
   cursor: pointer;
-box-shadow:  4px 4px 6px #31348a;
-         background-color: #FCCE19;
+  box-shadow: 4px 4px 6px #31348a;
+  background-color: #fcce19;
 }
 
-.arrow{
+.arrow {
   width: 20px;
 }
 .card:hover {
@@ -13,14 +13,13 @@ box-shadow:  4px 4px 6px #31348a;
   transform: translate(2px, 2px);
 }
 
-button{
-  transition: transform .2s;
+button {
+  transition: transform 0.2s;
 }
 
-button:hover{
-  transform: scale(1.4); 
+button:hover {
+  transform: scale(1.4);
 }
-
 
 .nav-arrow {
   height: 60px;
