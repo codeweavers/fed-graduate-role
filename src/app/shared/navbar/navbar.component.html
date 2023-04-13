@@ -1,0 +1,9 @@
+<ul>
+
+    <ng-template ngFor let-item [ngForOf]="menu">
+      <li>
+        <a [routerLink]="[item.url]">{{item.title}}</a>
+      </li>
+    </ng-template>
+  
+  </ul>

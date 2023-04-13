@@ -341,7 +341,7 @@ INFORMATION POINT: '[webpack-dev-server] Server started: Hot Module Replacement 
 
 So there are a few things to look at. I'll start with ERROR 1.
 
-1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) I can open it in a new browser tab by adding `ng serve --port 5500 --open`👀
+1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) I can open it in a new browser tab by adding `ng serve --port 5500 --open`
 
  - It still has the ERROR 404 (Not Found) - so, now I know it's listening on the right port, maybe there's something wrong with how I'm pointing to the styles.scss and main.ts files?
  - Have just double-checked json settings to make sure any instances of port 4200 have been changed to port 5500
@@ -350,4 +350,51 @@ So there are a few things to look at. I'll start with ERROR 1.
 - VERY EXCITED: I just got 'Understanding Angular' to appear on my Live Server screen (yay!)
 - I put that in the 'app.component.html' file, so perhaps I need to focus there?
 - If I go to each of the html files of header, app and index and paste them into the URL bar, they all appear as expected. Is it becuase I'm not linking them with something like React that they're not showing up?
-- 
+- Am looking up examples of React used with Angular and Bootstrap. Have found a couple of repos I htink could be helpful :) 
+
+### PM
+
+- I've tried looking at examples on GitHub and seeing if there's a different way to do this. Have run into some ERRORS, which I will try to fix (maybe I could use ng test?) Might make the errors a bit clearer 
+- ERROR now reads: 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
+
+See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-iv6g5B/angular-errors.log" for further details.'
+- I've looked on GitHub and seen that I may need to update the global CLI (using `npm i @angular/cli -g)
+- I now get a new ERROR: Ms-MacBook-Pro:fed-graduate-role marthabennett$ npm i @angular/cli -g
+npm ERR! code EACCES
+npm ERR! syscall rename
+npm ERR! path /usr/local/lib/node_modules/@angular/cli
+npm ERR! dest /usr/local/lib/node_modules/@angular/.cli-G39XYeT9
+npm ERR! errno -13
+npm ERR! Error: EACCES: permission denied, rename '/usr/local/lib/node_modules/@angular/cli' -> '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'
+npm ERR!  [Error: EACCES: permission denied, rename '/usr/local/lib/node_modules/@angular/cli' -> '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'] {
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'rename',
+npm ERR!   path: '/usr/local/lib/node_modules/@angular/cli',
+npm ERR!   dest: '/usr/local/lib/node_modules/@angular/.cli-G39XYeT9'
+npm ERR! }
+npm ERR! 
+npm ERR! The operation was rejected by your operating system.
+npm ERR! It is likely you do not have the permissions to access this file as the current user
+npm ERR! 
+npm ERR! If you believe this might be a permissions issue, please double-check the
+npm ERR! permissions of the file and its containing directories, or try running
+npm ERR! the command again as root/Administrator.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/marthabennett/.npm/_logs/2023-04-13T15_38_34_301Z-debug-0.log
+
+- Some possible causes/things to try: https://www.reddit.com/r/node/comments/7bldtn/npm_err_please_try_running_this_command_again_as/
+
+1. Another process may be locking the file
+2. Powershell as admin
+3. Git Bash (my normal shell I always use)
+4. npm cache clean
+5. npm cache clean --force
+6. npm cache verify
+7. Uninstalling node and re installing
+8. Changing permission settings on AppData/Roaming/npm
+9. Deleting files in AppData/Roaming/npm/nodemodules
+10. I may not be running as an admin (this happened earlier in the week I think?) - will look up how to do this. 👀
+
+

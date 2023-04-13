@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '../app/header/header.component';
-import { PokemonListComponent } from '../app/pokemon-list/pokemon-list.component';
+import { PagesModule } from './pages/pages.modules';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    PokemonListComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   
+    BrowserAnimationsModule,
+	  HttpClientModule,
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
