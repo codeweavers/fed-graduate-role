@@ -341,4 +341,12 @@ INFORMATION POINT: '[webpack-dev-server] Server started: Hot Module Replacement 
 
 So there are a few things to look at. I'll start with ERROR 1.
 
-1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) 👀
+1. ERROR 1: I've now got Angular listening on port 5500 (`ng serve --port 5500`) I can open it in a new browser tab by adding `ng serve --port 5500 --open`👀
+
+ - It still has the ERROR 404 (Not Found) - so, now I know it's listening on the right port, maybe there's something wrong with how I'm pointing to the styles.scss and main.ts files?
+ - Have just double-checked json settings to make sure any instances of port 4200 have been changed to port 5500
+ - I deleted the styles and main links from the HTML and all the ERRORS disappeared. Still not showing anything on the page, though. Will keep reading Angular docs and looking at their example.
+ 
+- VERY EXCITED: I just got 'Understanding Angular' to appear on my Live Server screen (yay!)
+- I put that in the 'app.component.html' file, so perhaps I need to focus there?
+- 
