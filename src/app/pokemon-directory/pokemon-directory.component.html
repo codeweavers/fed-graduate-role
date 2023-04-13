@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Pokemon Directory</h1>
+  <p>Choose Your Pokemon!</p>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let pokemon of pokemonList">
       <a [routerLink]="['/pokemon', pokemon.name]">{{ pokemon.name }}</a>

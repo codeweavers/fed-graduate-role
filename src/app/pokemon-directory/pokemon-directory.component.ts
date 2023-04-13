@@ -54,6 +54,10 @@ export class PokemonDirectoryComponent implements OnInit {
         this.pokemonList = data.results;
         this.totalItems = data.count;
         this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+        this.pagesArray = Array.from(
+          { length: this.totalPages },
+          (_, i) => i + 1
+        );
       });
   }
 }
