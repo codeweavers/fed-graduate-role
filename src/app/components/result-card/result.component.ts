@@ -21,6 +21,6 @@ export class ResultComponent implements OnInit {
         colour: this.pokemonService.getTypeColour(type.type.name),
       };
     });
-    console.log(this.types, "TYPES")
+    // console.log(this.types, "TYPES")
   }
 }
