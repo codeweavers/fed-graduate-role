@@ -52,10 +52,9 @@ export class ResultsDisplayComponent implements OnInit {
         }
       },
       (error) => {
-        console.log('ERROR:', error);
         if (error.status) {
           window.alert(
-            `${searchTerm} ${error.error}. We couldn't get it from the pokedex - try checking your spelling?`
+            `${searchTerm} ${error.error} in the Poképedia - try checking your spelling?`
           );
         }
       }
@@ -71,7 +70,6 @@ export class ResultsDisplayComponent implements OnInit {
           this.pokemonSet.push(uniqueResponse);
         });
     });
-    console.log('PAGE:', this.page);
     this.previousNavState = this.page > 1;
     this.nextNavState = this.page < 26;
   }

@@ -69,14 +69,6 @@
       </div>
     </div>
   </div>
-  <div class="pb-5 mb-5 back">
-    <a routerLink="../../pokemon" [queryParams]="{ page: 1 }" class="btn">
-      <img
-        src="../../assets/left-arrow.png"
-        alt="back arrow"
-        style="width: 40px"
-      />
-      Back to Poképedia
-    </a>
-  </div>
+
+  <app-back-button routerPath = "../../pokemon" ></app-back-button>
 </div>

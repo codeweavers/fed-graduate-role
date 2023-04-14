@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-back-button',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./back-button.component.scss']
 })
 export class BackButtonComponent {
+  @Input() routerPath: any;
+  constructor(){}
+
+  ngOnInit():void{
+console.log("ROUTER THROUGH:", this.routerPath)
+  }
 
 }
