@@ -14,7 +14,7 @@ export class PaginationComponent implements OnInit {
     this.getPagesArray();
   }
 
-  // Uses total number of pokemon to create an array of consecutive numbers to serve as the navigation buttons
+  // Uses total number of pokemon to dynamically create an array of consecutive numbers to serve as the navigation buttons
   getPagesArray(): void {
     this.pokemonService.getPokemon(0).subscribe((response:any) => {
       const totalPages = response.count / 50;
@@ -26,5 +26,4 @@ export class PaginationComponent implements OnInit {
     });
   }
 
-  // Add router to an onclick on each number so that it reloads the same result display component but puts a different offset digit into the getPokemon function
 }

@@ -1,6 +1,6 @@
-<div class="main d-flex flex-column align-items-center ">
+<div class="main d-flex flex-column align-items-center">
   <div
-    class="card m-4 border border-dark rounded-bottom p-2"
+    class="card m-4 border mb-2 border-dark rounded-bottom p-2"
     style="
       background-color: #f3d74c;
       box-shadow: 9px 9px 13px #3b3939, -9px -9px 13px #ffffff;
@@ -12,21 +12,17 @@
     >
       <div *ngIf="this.defaultSprites.available">
         <img
-          [src]="defaultSprites.front_default"
-          alt="Default front view"
-          class="w-50  sprite"
-        />
-        <img
-          [src]="defaultSprites.back_default"
-          alt="Default back view"
+          [src]="defaultSprites.front"
+          alt="Front view"
           class="w-50 sprite"
         />
+        <img [src]="defaultSprites.back" alt="Back view" class="w-50 sprite" />
       </div>
       <div
         *ngIf="!this.defaultSprites.available"
         class="d-flex justify-content-center py-2"
       >
-        <img src="../../assets/no-photos.png" class="w-25" />
+        <img src="../../assets/no-image.png" class="w-25" />
       </div>
     </div>
     <div class="border border-dark rounded-bottom bg-warning p-2">
@@ -40,7 +36,7 @@
           class="abilities d-flex flex-wrap"
           *ngFor="let stat of pokemonData.stats"
         >
-          <p>{{ stat["stat"]["name"] | titlecase| removeHyphens }}:</p>
+          <p>{{ stat["stat"]["name"] | titlecase | removeHyphens }}:</p>
           <p>{{ stat["base_stat"] }}</p>
         </div>
 

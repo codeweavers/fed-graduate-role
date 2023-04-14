@@ -1,5 +1,4 @@
 .card {
-  // background: #f3d74c;
   cursor: pointer;
   box-shadow: 4px 4px 6px #31348a;
   background-color: #fcce19;
@@ -13,17 +12,12 @@
   transform: translate(2px, 2px);
 }
 
-button {
-  transition: transform 0.2s;
-}
-
 button:hover {
-  transform: scale(1.4);
+  transform: translate(2px, 2px);
 }
 
 .nav-arrow {
-  height: 60px;
-  background: #333;
+  height: 50px;
   position: fixed;
   top: 0;
   bottom: 0;

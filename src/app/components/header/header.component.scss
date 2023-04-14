@@ -1,23 +1,23 @@
-header{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 20px;
-    background-color: #ffcc3f;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
-
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffcc3f;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 
-a{display: flex; align-items: center;
+a {
+  display: flex;
+  align-items: center;
 }
 
-h1{
-    text-shadow: -1px -1px 0 #00172f, 1px -1px 0 #00172f, -1px 1px 0 #00172f, 2px 2px 0 #00172f;
+h1 {
+  text-shadow: -1px -1px 0 #00172f, 1px -1px 0 #00172f, -1px 1px 0 #00172f,
+    2px 2px 0 #00172f;
 }
 // TRY shadow effect with this colour #004289
 
-a:hover{
-    transform: translate(2px, 2px);
-
+a:hover {
+  transform: translate(2px, 2px);
 }

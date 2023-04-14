@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class ResultComponent implements OnInit {
   @Input() pokemon: PokemonType;
   types: any;
+  displayImage: string;
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -21,6 +22,16 @@ export class ResultComponent implements OnInit {
         colour: this.pokemonService.getTypeColour(type.type.name),
       };
     });
-    // console.log(this.types, "TYPES")
+    this.displayImage =
+      this.pokemon.sprites.front_default !== null
+        ? this.pokemon.sprites.front_default
+        : Object.entries(this.pokemon.sprites).filter(
+            (sprite) => typeof sprite[1] === 'string'
+          ).length > 0
+        ? Object.entries(this.pokemon.sprites).filter(
+            (sprite) => typeof sprite[1] === 'string'
+          )[0][1]
+        : '../../assets/no-image.png';
+    console.log('DISPLAY IMAGE', this.displayImage);
   }
 }

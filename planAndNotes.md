@@ -80,3 +80,8 @@ TO-DO//BUGS:
 
 Additional features:
 - Filter by type
+
+
+POINTS OF INTEREST:
+- Not all pokemon have default images, or any images at all 
+- 
