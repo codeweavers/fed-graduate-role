@@ -28,11 +28,10 @@
       >
         <img src="../../assets/no-photos.png" class="w-25" />
       </div>
-      <!-- delphox -->
     </div>
     <div class="border border-dark rounded-bottom bg-warning p-2">
       <h1 style="background-color: #f3d74c" class="p-2 border border-dark">
-        {{ pokemonName | titlecase }}
+        {{ pokemonData.species.name | titlecase }}
       </h1>
       <div class="p-3 border border-dark" style="background-color: #fff1ad">
         <p>Weight: {{ pokemonData.weight | convertWeight }}</p>
