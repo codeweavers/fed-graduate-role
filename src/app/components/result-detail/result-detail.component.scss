@@ -1,20 +1,19 @@
-p{
+p {
   margin: 0px;
 }
 
-.sprite{
-  filter: drop-shadow(10px 10px 4px #060616);   
-  transition: transform .2s;
+.sprite {
+  filter: drop-shadow(10px 10px 4px #060616);
+  transition: transform 0.2s;
 }
 
-.sprite:hover{
-  transform: scale(1.4); 
+.sprite:hover {
+  transform: scale(1.4);
 }
 
-a{
-  transition: transform .2s;
-  
+a {
+  transition: transform 0.2s;
 }
-a:hover{
-  transform: scale(1.2); 
+a:hover {
+  transform: scale(1.2);
 }
