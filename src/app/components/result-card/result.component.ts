@@ -32,6 +32,5 @@ export class ResultComponent implements OnInit {
             (sprite) => typeof sprite[1] === 'string'
           )[0][1]
         : '../../assets/no-image.png';
-    console.log('DISPLAY IMAGE', this.displayImage);
   }
 }
