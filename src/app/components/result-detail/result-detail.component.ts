@@ -9,6 +9,10 @@ interface Location {
   method?: string;
 }
 
+interface Ability {
+  ability: {name: string, url: string}
+}
+
 @Component({
   selector: 'app-result-detail',
   templateUrl: './result-detail.component.html',
@@ -71,6 +75,9 @@ export class ResultDetailComponent implements OnInit {
         this.getAvailableSprites(pokemon.sprites);
         this.pokemonData = pokemon;
 
+        // Get more abilities data
+        this.getAllAbilityInformation(pokemon.abilities);
+
         // Use this specific data to make an additional call to the API that returns one location in which the pokemon is encountered.
         this.pokemonService
           .getEncounters(pokemon.location_area_encounters)
@@ -94,5 +101,10 @@ export class ResultDetailComponent implements OnInit {
         this.router.navigate(['/404']);
       }
     );
+    
+  }
+
+  getAllAbilityInformation(abilitiesArray: Ability[]){
+    abilitiesArray.forEach((ability: Ability)=>this.pokemonService.getAbilityInformation(ability.ability.url).subscribe((res)=>console.log("RES:", res.effect_entries.filter((effect:any)=>effect.language.name==="en"))))
   }
 }

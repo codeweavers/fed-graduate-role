@@ -20,13 +20,14 @@ export class PokemonService {
     return this.http.get<PokemonList>(`${this.apiUrl}&offset=${offset}`)
   }
 
+  //Get data for a specific pokemon
   getSpecificPokemon(name: string): Observable<PokemonType> {
     return this.http.get<PokemonType>(
       `https://pokeapi.co/api/v2/pokemon/${name}`
     );
   }
 
-  // Function to get correct colour from type that can be passed into the conditional styling. Initially I tried using ternary chaining here, but it wasn't working beyond two colours - and It's generally bad practice as I understand (although I'm not convinced this is easier to read)
+  // Function to get correct colour from type that can be passed into the conditional styling. Initially I tried using ternary chaining here, but it wasn't working beyond two colours - and It's generally bad practice as I understand (although I'm not convinced this is easier to read). I'm not convinced either that here is the best place for it, but I want it accessible from multiple components. 
   getTypeColour(type: string): string {
     switch (type) {
       case 'psychic':
@@ -73,12 +74,16 @@ export class PokemonService {
   // Get encounters
   getEncounters(url: string): Observable<any>{
     let encountersObj= this.http.get(url);
-    console.log("encountersObj:", encountersObj);
     return encountersObj;
   }
 
-  // Get encounter method:
+  // Get method of encounter
   getEncounterMethod(url: string): Observable<any>{
     return this.http.get(url);
   }
+
+  getAbilityInformation(ability:string): Observable<any>{
+    console.log("ABILITY COME THROUGH", ability)
+return this.http.get(ability)
+}
 }

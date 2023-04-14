@@ -10,7 +10,6 @@ export class BackButtonComponent {
   constructor(){}
 
   ngOnInit():void{
-console.log("ROUTER THROUGH:", this.routerPath)
   }
 
 }
