@@ -34,6 +34,7 @@ FUNCTIONALITY:
     - result detail
     - header
     - footer
+- DONE Deploy!
 - DONE Pagination for display of results https://www.youtube.com/watch?v=ov9UqIEa8Zs 
 - DONE Set up dynamic routing:
     - NB: these routes must be SHAREABLE! I.e., not depend on historical navigation (missed this on first attempt)
@@ -41,7 +42,6 @@ FUNCTIONALITY:
     
 - Look into the tests that Angular spins up automatically
 - wildcard routing for 404 page
-- DONE Deploy!
 
 
 RESOURCES
@@ -54,6 +54,9 @@ TO-DO//BUGS:
 - DONE BUG: first fifty paginated are missing. Is there default set?
 - DONE FUNCTIONALITY: pagination is not correct. 
 - DONE PERFORMANCE: is making individual API calls the best solution for detail pages? Possibly not, assume there's a way of using fullSet data - look into this for refactoring. 
+- http://localhost:4200/pokemon/pikachu-original-cap and delphox //  delphox 
+- If there is ONE pic, show this in detail - and if there is NO pic in results display, show 'no photo' icon
+- search on enter key down 
 
 
 
