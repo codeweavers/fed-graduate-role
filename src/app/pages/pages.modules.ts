@@ -24,7 +24,7 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
     RouterModule,
     HttpClientModule,
     ComponentsModule,
-    SharedModule,
+    SharedModule
   ]
 })
 export class PagesModule { }
