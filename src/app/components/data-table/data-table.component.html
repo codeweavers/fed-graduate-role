@@ -1,0 +1,37 @@
+<!-- <app-data-table [headers]="['head1', 'head2']" [data]="[['data11', 'data12'], ['data21', 'data22']]"></app-data-table> -->
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+  
+      <table class="table-responsive table-container">
+  
+        <thead>
+          <tr>
+  
+            <ng-template ngFor let-header [ngForOf]="headers">
+              <th>
+                <h1>{{header}}</h1>
+              </th>
+            </ng-template>
+  
+          </tr>
+        </thead>
+  
+        <tbody>
+  
+          <ng-template ngFor let-row [ngForOf]="data">
+            <tr>
+  
+              <ng-template ngFor let-dataRow [ngForOf]="row">
+                <td>{{dataRow}}</td>
+              </ng-template>
+  
+            </tr>
+          </ng-template>
+  
+        </tbody>
+  
+      </table>
+  
+    </div>
+  </div>

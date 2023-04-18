@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing" style="height: 100%;">
+  
+      <div id="poke_container" class="poke-container">
+        <app-pokemon-card *ngFor="let pokemon of pokemons;" [pokemon]="pokemon">
+        </app-pokemon-card>
+      </div>
+  
+    </div>
+  
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing d-flex justify-content-center">
+      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="loadMore()">Load More Pokémon</button>
+    </div>
+  </div>
