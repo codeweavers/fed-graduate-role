@@ -209,7 +209,7 @@ This is the easiest way to run and develop your app locally.
 - Angular already installed. Installed Node.
 - `ng serve`
 - Oh no - some of the same errors as before: had to delete some of the later additions in Angular, e.g. 'pokemon-list' and 'services'
-- It's now working! Have compiled it successfully :)
+- It's now working! Have compiled it successfully
 - Ok, next bit - am setting up styling for componenets, but I can't see them on my Live Server. I suspect I've linked the wrong HTML file up (think it's using index.html) but I'm not sure how to fix this. I'm following a tutorial, so I'll see if there's a screenshot of their index.html I can suss out.
 - Progressing and about to do the GET request, but Live Server is now not showing anything. WARNING message reads: 'crbug/1173575, non-JS module files deprecated. (anonymous) @ VM47:6750' - will Google what this means, as I've seen it before. It's something to do with old ways of testing... ok, have fixed this ERROR. I'm getting different ERRORS now at least! 
 - Now reads: 'main.ts:6 ERROR RangeError: Maximum call stack size exceeded'. This ERROR occurs when there is an infinite loop (oops). Got rid of AppRouting component to see if that helps (it doesn't). I've found this on Stack Overflow: 
@@ -262,13 +262,13 @@ Here are the 3 faults in more detail:
     NullInjectorError: No provider for HttpClient!
 
     3. Unexpected ng closing tag = Error: Errors during JIT compilation of template for HeaderComponent: Unexpected closing tag "-". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
-<h1>Pokedex App</h1>
+`<h1>Pokedex App</h1>`
 <div>class="pokedex-header"</div>
 [ERROR ->]</->
 </ng-template>"): ng:///HeaderComponent/template.html@6:0, Unexpected closing tag "ng-template". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags ("
 <div>class="pokedex-header"</div>
 </->
-[ERROR ->]</ng-template>"): ng:///HeaderComponent/template.html@7:0
+[ERROR ->]</ng-template>"): ng:///HeaderComponent/template.html@7:0`
 
 - Let's work through these, one by one.
 
@@ -354,7 +354,7 @@ So there are a few things to look at. I'll start with ERROR 1.
 
 ### PM
 
-- I've tried looking at examples on GitHub and seeing if there's a different way to do this. Have run into some ERRORS, which I will try to fix (maybe I could use ng test?) Might make the errors a bit clearer 
+- I've tried looking at examples on GitHub and seeing if there's a different way to do this (e.g. https://github.com/dadu0699/Pokedex/tree/master/src). Have run into some ERRORS, which I will try to fix (maybe I could use ng test?) Might make the errors a bit clearer 
 - ERROR now reads: 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
 
 See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-iv6g5B/angular-errors.log" for further details.'
@@ -405,7 +405,7 @@ npm ERR!     /Users/marthabennett/.npm/_logs/2023-04-13T15_38_34_301Z-debug-0.lo
 - That didn't work. ERROR: 'This command is not available when running the Angular CLI outside a workspace.' Maybe I'm in the wrong file/at the wrong level?
 - Will try in 'fed-graduate-role' file. 
 - Ok, it's listening on Port 5500, a few ERRORS, same as before. I will now try to run `ng test`, now that I hopefully have permission...
-- Ohhhh - same ERROR as before. 👀
+- Ohhhh - same ERROR as before. 
 - 'An unhandled exception occurred: error TS18003: No inputs were found in config file '/Users/marthabennett/Documents/Coding/CodeWeavers/Pokedex/fed-graduate-role/tsconfig.spec.json'. Specified 'include' paths were '["src/**/*.spec.ts","src/**/*.d.ts"]' and 'exclude' paths were '["./out-tsc/spec"]'.
 
 See "/private/var/folders/56/y3ypz80117d3l86wh3nkj9wr0000gn/T/ng-Y8YnJP/angular-errors.log" for further details.'
@@ -450,6 +450,48 @@ ERROR 5: Error: src/app/pages/pages.modules.ts:26:5 - error NG6002: This import 
 
 26     ComponentsModule,
 
-Ok José. Going for a cup of tea, then going to work through ERRORS one by one.
+Ok José. Going for a cup of tea, then going to work through ERRORS one by one. 
+
+Just before I go: have I tried `ng build` yet? Same ERRORS as before! Time for a break!
+
+## Process (14/4/23) 
+
+### AM
+
+- Going through ERRORS from yesterday, one by one 
+
+## Process (18/4/23) 
+
+### AM
+
+- Looking at how I would run tests if I could 👀
+- Could use react testing library using Jest (runs in Node; not great for e2e tests)
+- Create test files next to the components you are testing e.g. `App.test.js` and `App.js` in the same folder
+- Command Line usually `npm test`, in this case: `ng test` (`npm test a` to run all tests - does this also work for `ng test a`? 🤔)
+- To write a test: create an `it()` or `test()` block with the name of the test and its code (Jest has an in-built `expect()` global function)
+
+- Example of a basic test: 
+
+    `import sum from './sum';
+
+    it('sums numbers', () => {
+  expect(sum(1, 2)).toEqual(3);
+  expect(sum(2, 2)).toEqual(4);
+    });`
+- I've create an `app.component.test.js` file with this basic smoke test inside:
+    `import React from 'react';
+    import ReactDOM from 'react-dom';
+    import AppComponent from './app.component';
+
+    it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<AppComponent />, div);
+    });`
+
+This is just to see if the component renders without throwing. 
+- Could use React testing library to test components in isolation (recommended to use this with `jest-dom` for improved assertions)
+- To install, run: `npm install --save @testing-library/react @testing-library/jest-dom` (`ng ...` ? 🤔)
+- Maybe need to initialise a test environment first (add a `src/setupTests.js` - this will be automatically executed before running my tests)
+- Do I need to use a CI server (e.g. Travis/Circle CI? 🤔)
 
 
